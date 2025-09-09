@@ -1,0 +1,31 @@
+site_name: Bioinformática 40397
+site_description: Guía y contenidos de la asignatura 40397 - Bioinformática (Grado en Ciencia e Ingeniería de Datos)
+theme:
+  name: mkdocs
+nav:
+  - Presentación: index.md
+  - Bloque 1 · Bioinformática:
+      - Introducción: bloque-1/index.md
+      - ADN y ARN: bloque-1/01-adn-arn.md
+      - Secuenciación y Genoma: bloque-1/02-secuenciacion-genoma.md
+      - Expresión génica y transcriptómica: bloque-1/03-expresion-genica-transcriptomica.md
+      - Proteómica: bloque-1/04-proteomica.md
+      - Bibliografía (B1): bloque-1/bibliografia.md
+  - Bloque 2 · Bases de datos genómicas:
+      - Introducción: bloque-2/index.md
+      - Tipos y BD primarias/secundarias: bloque-2/01-tipos-bd-primarias-secundarias.md
+      - Alineamiento de secuencias: bloque-2/02-alineamiento-secuencias.md
+      - Análisis filogenéticos: bloque-2/03-analisis-filogeneticos.md
+      - Bibliografía (B2): bloque-2/bibliografia.md
+  - Bloque 3 · Bioinformática estructural:
+      - Introducción: bloque-3/index.md
+      - Estructuras 3D: bloque-3/01-estructuras-3d.md
+      - BD estructurales: bloque-3/02-bases-datos-estructurales.md
+      - Predicción estructural: bloque-3/03-prediccion-estructural.md
+      - Bibliografía (B3): bloque-3/bibliografia.md
+  - Prácticas:
+      - Índice de prácticas: practicas/index.md
+      - Práctica 1: practicas/practica-1.md
+      - Práctica 2: practicas/practica-2.md
+      - Práctica 3: practicas/practica-3.md
+  - Bibliografía general: bibliografia-general.md
