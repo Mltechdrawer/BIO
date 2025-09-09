@@ -1,31 +1,27 @@
-site_name: Bioinformática 40397
-site_description: Guía y contenidos de la asignatura 40397 - Bioinformática (Grado en Ciencia e Ingeniería de Datos)
-theme:
-  name: mkdocs
+extra_css:
+- styles/extra.css
 nav:
-  - Presentación: index.md
-  - Bloque 1 · Bioinformática:
-      - Introducción: bloque-1/index.md
-      - ADN y ARN: bloque-1/01-adn-arn.md
-      - Secuenciación y Genoma: bloque-1/02-secuenciacion-genoma.md
-      - Expresión génica y transcriptómica: bloque-1/03-expresion-genica-transcriptomica.md
-      - Proteómica: bloque-1/04-proteomica.md
-      - Bibliografía (B1): bloque-1/bibliografia.md
-  - Bloque 2 · Bases de datos genómicas:
-      - Introducción: bloque-2/index.md
-      - Tipos y BD primarias/secundarias: bloque-2/01-tipos-bd-primarias-secundarias.md
-      - Alineamiento de secuencias: bloque-2/02-alineamiento-secuencias.md
-      - Análisis filogenéticos: bloque-2/03-analisis-filogeneticos.md
-      - Bibliografía (B2): bloque-2/bibliografia.md
-  - Bloque 3 · Bioinformática estructural:
-      - Introducción: bloque-3/index.md
-      - Estructuras 3D: bloque-3/01-estructuras-3d.md
-      - BD estructurales: bloque-3/02-bases-datos-estructurales.md
-      - Predicción estructural: bloque-3/03-prediccion-estructural.md
-      - Bibliografía (B3): bloque-3/bibliografia.md
-  - Prácticas:
-      - Índice de prácticas: practicas/index.md
-      - Práctica 1: practicas/practica-1.md
-      - Práctica 2: practicas/practica-2.md
-      - Práctica 3: practicas/practica-3.md
-  - Bibliografía general: bibliografia-general.md
+- Inicio: index.md
+- Contenidos: contenidos.md
+- Bloque 1. Bioinformática:
+  - Bioinformática (introducción): Bloque1_Bioinformatica/index.md
+  - ADN y ARN: Bloque1_Bioinformatica/01_adn_arn.md
+  - Secuenciación y Genoma: Bloque1_Bioinformatica/02_secuenciacion_genoma.md
+  - Expresión génica y transcriptómica: Bloque1_Bioinformatica/03_expresion_genica_transcriptomica.md
+  - Proteómica: Bloque1_Bioinformatica/04_proteomica.md
+  - Bibliografía: Bloque1_Bioinformatica/bibliografia.md
+- Bloque 2. Bases de datos genómicas:
+  - Introducción: Bloque2_BD_Genomicas/index.md
+  - Tipos y BD primarias/secundarias: Bloque2_BD_Genomicas/01_tipos_bd_primarias_secundarias.md
+  - Alineamiento y comparación de secuencias: Bloque2_BD_Genomicas/02_alineamiento_comparacion.md
+  - Análisis filogenéticos: Bloque2_BD_Genomicas/03_analisis_filogeneticos.md
+  - Bibliografía: Bloque2_BD_Genomicas/bibliografia.md
+- Bloque 3. Bioinformática estructural:
+  - Introducción: Bloque3_Bioinformatica_Estructural/index.md
+  - Estructuras 3D de macromoléculas: Bloque3_Bioinformatica_Estructural/01_estructuras_3d.md
+  - Bases de datos estructurales: Bloque3_Bioinformatica_Estructural/02_bases_datos_estructurales.md
+  - Predicción estructural: Bloque3_Bioinformatica_Estructural/03_prediccion_estructural.md
+  - Bibliografía: Bloque3_Bioinformatica_Estructural/bibliografia.md
+site_name: Bioinformática 40397
+theme:
+  name: material

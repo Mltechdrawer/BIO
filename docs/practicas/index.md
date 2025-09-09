@@ -1,3 +1,0 @@
-# Prácticas
-
-Contenido en construcción
