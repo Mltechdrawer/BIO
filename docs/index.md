@@ -1,19 +1,25 @@
-# Programación de Aplicaciones Móviles Nativas
+# Bioinformática
+![Portada](files/molecula.png "Bioinformática")
 
-![Portada](https://github.com/Mltechbox/PAMN/blob/main/S1.png?raw=true/400/800 "PAMN")
+<h1 style="text-align: center;">Bienvenido a Bioinformática</h1>
 
-<h1 style="text-align: center;">Bienvenido a PAMN</h1>
+## 📱 Bioinformática
 
-## 📱 Programación de Aplicaciones Móviles Nativas
+**Bioinformática** es una asignatura optativa de 4.º curso del Grado en Ciencia e Ingeniería de Datos. Su objetivo es capacitar al alumnado en el análisis, modelado y gestión de información biológica a través de herramientas computacionales. Se abordan aspectos como el tratamiento de secuencias de ADN, ARN y proteínas, el uso de bases de datos genómicas y estructurales, así como la predicción y análisis de estructuras moleculares.
 
-**Programación de Aplicaciones Móviles Nativas (PAMN)** es una asignatura optativa de 4.º curso del Grado en Ingeniería Informática. Su objetivo es capacitar al alumnado en el diseño, desarrollo y despliegue de aplicaciones móviles nativas para sistemas operativos actuales. Se abordan aspectos como accesibilidad, calidad del software y prácticas DevOps. Esta materia amplía los conocimientos adquiridos previamente en programación móvil, y refuerza un perfil profesional muy demandado en el sector tecnológico actual.
+La materia integra contenidos de biología, matemáticas, informática y estadística, y proporciona una formación clave en el ámbito de la biomedicina y la biotecnología. Esta asignatura amplía los conocimientos adquiridos previamente en programación, bases de datos e inteligencia artificial, y refuerza un perfil profesional altamente demandado en sectores como la investigación biomédica, la farmacología y la ciencia de datos aplicada a la biología.
 
-<a href="files/PDA_GII_40983_PAMN_2025_2026.pdf" target="_blank"><img src="https://img.shields.io/badge/PDA-2025%2F26-blue" alt="badge"/></a>
-<a href="files/PAMN%20Presentación%202025-2026.pdf" target="_blank"><img src="https://img.shields.io/badge/Presentación-2025%2F26-blue" alt="badge"/></a>
+**Profesorado:**
 
-<a href="https://www.android.com/" target="_blank"><img src="https://img.shields.io/badge/App-Android-green?logo=android" alt="badge"/></a>
-<a href="https://www.apple.com/ios/" target="_blank"><img src="https://img.shields.io/badge/App-iOS-lightgrey?logo=apple" alt="badge"/></a>
+- José Carlos Rodríguez Rodríguez. Responsable de prácticas  
+  
+- Victoria Torres Rodríguez. Prácticas en aula  
+  
+- María Dolores Afonso Suárez. Coordinadora  
+  
 
+<a href="files/GCID_40397_BIO_2025_2026.pdf" target="_blank"><img src="https://img.shields.io/badge/PDA-2025%2F26-blue" alt="badge"/></a>
+<a href="files/BIO Presentación 2025-2026.pdf" target="_blank"><img src="https://img.shields.io/badge/Presentación-2025%2F26-blue" alt="badge"/></a>
 
 <a href="https://www.ulpgc.es" target="_blank">
   <img src="https://img.shields.io/badge/ULPGC-Universidad-blue" alt="ULPGC">
