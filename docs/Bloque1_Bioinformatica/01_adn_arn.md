@@ -25,9 +25,12 @@ Estas teorías buscan explicar cómo se pasó de compuestos químicos sencillos 
 La química de la vida se fundamenta en la combinación de moléculas simples para formar macromoléculas complejas.
 
 - **Moléculas pequeñas**: ejemplos como etanol (C₂H₅OH), glucosa (C₆H₁₂O₆) o ácido fosfórico (H₃PO₄).
+
+![Moléculas](B101/01_moleculas.png "Moléculas")
+
 - **Macromoléculas**: largas cadenas poliméricas, como la celulosa o las proteínas.
 
-![Macromolécula](B101/01_macromol.png "Macromolécula")
+![Macromoléculas](B101/01_macromoleculas.png "Macromoléculas")
 
 - **Ácidos nucleicos**: ADN y ARN son polímeros de nucleótidos, cuyas unidades básicas están formadas por:
     - Una base nitrogenada (A, T/U, G, C).
@@ -75,11 +78,28 @@ Cada organismo vivo tiene su propio conjunto de secuencias de ADN y ARN únicas.
 Los modelos matemáticos permiten formalizar y analizar las secuencias biológicas:
 
 - **Modelos probabilísticos**: como las **cadenas de Markov**, que describen la probabilidad de aparición de un nucleótido en función de sus vecinos.
+
+![Cadena simple de Markov](B101/01_cadenamarkov.png "Cadena simple de Markov")
+
 - **Modelos estadísticos**: permiten calcular frecuencias de bases, identificar motivos y regiones conservadas.
+
+![Modelo estadístico](B101/01_modeloestadistico.png "Modelo estadístico")
+
 - **Modelos algorítmicos**: aplicados en alineamiento de secuencias, detección de genes y construcción de árboles filogenéticos.
+
+![Modelo algorítmico](B101/01_diagramaflujo.png "Modelo algorítmico")
+
 - **Modelos de predicción estructural**: aproximaciones computacionales que conectan secuencia y estructura.
 
+![Modelo estuctural](B101/01_redneuronal.png "Modelo estructural")
+
+**[Otros modelos](01_otrosmodelos.md)**
+
 La representación matemática abre la puerta a una comprensión más profunda de los procesos de **replicación, transcripción y traducción**, esenciales para el flujo de información genética.
+
+---
+
+**[Dogma Central de la Biología Molecular](01_dogma.md)**
 
 ---
 

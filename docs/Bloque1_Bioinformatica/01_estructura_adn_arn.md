@@ -11,7 +11,14 @@ El ácido desoxirribonucleico (ADN) y el ácido ribonucleico (ARN) son **ácidos
 - **Diferencia clave**: el ARN posee un **grupo 2’-OH** en la ribosa (ausente en desoxirribosa). Ese 2’-OH incrementa la **reactividad** química y favorece geometrías de **hélice A** en dúplex de ARN; además facilita el **plegamiento intramolecular** y contactos con proteínas.
 - **Bases**: el ADN usa **timina (T)**; el ARN usa **uracilo (U)**. Las **parejas de bases** canónicas son **A·T(U)** y **G·C**.
 
-![Nucleótidos](B101/01_nucleotidos.png "Nucleótidos")
+![Nucleótidos](B101/01_nucleotidos1.png "Nucleótidos")
+
+*Nucleótidos. composición*
+
+---
+
+![Nucleótidos](B101/01_nucleotidos2.png "Nucleótidos")
+
 *Nucleótidos. Estructura ADN*
 
 ---
