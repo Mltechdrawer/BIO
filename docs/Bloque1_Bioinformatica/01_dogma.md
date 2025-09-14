@@ -35,4 +35,7 @@ Este dogma explica cómo la información hereditaria se utiliza para construir l
 <p>- Ocurre en el caso de los priones, donde una proteína mal plegada induce a otras proteínas a adoptar la misma conformación anómala (ejemplo: enfermedad de Creutzfeldt-Jakob).</p>
 </details>
 
-## Contexto histórico
+## Replicación - Transcripción - Traducción
+
+![Replicación - Transcripción - Traducción](B101/rtt.png "Replicación - Transcripción - Traducción")
+
