@@ -16,7 +16,7 @@
     
     
       
-        <title>Ejercicios: Detecta el fallo en la secuencia - Bioinformática</title>
+        <title>El descubrimiento de la estructura del ADN - Bioinformática</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ejercicios-detecta-el-fallo-en-la-secuencia" class="md-skip">
+        <a href="#el-descubrimiento-de-la-estructura-del-adn" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ejercicios: Detecta el fallo en la secuencia
+              El descubrimiento de la estructura del ADN
             
           </span>
         </div>
@@ -621,45 +621,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-base-prohibida-en-el-arn" class="md-nav__link">
+  <a href="#introduccion" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Base prohibida en el ARN
+      Introducción
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-complementariedad-incorrecta-en-adn" class="md-nav__link">
+  <a href="#contexto-historico" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Complementariedad incorrecta en ADN
+      Contexto histórico
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-orientacion-invertida" class="md-nav__link">
+  <a href="#rosalind-franklin-y-maurice-wilkins" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Orientación invertida
+      Rosalind Franklin y Maurice Wilkins
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-secuencia-hibrida-imposible" class="md-nav__link">
+  <a href="#watson-y-crick" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Secuencia híbrida imposible
+      Watson y Crick
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-uracilo-en-adn" class="md-nav__link">
+  <a href="#el-modelo-de-la-doble-helice" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Uracilo en ADN
+      El modelo de la doble hélice
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reconocimiento-y-controversia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reconocimiento y controversia
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusión
     </span>
   </a>
   
@@ -681,65 +699,33 @@
 
 
 
-<h1 id="ejercicios-detecta-el-fallo-en-la-secuencia">Ejercicios: Detecta el fallo en la secuencia</h1>
-<h2 id="1-base-prohibida-en-el-arn">1. Base prohibida en el ARN</h2>
-<p><strong>Enunciado:</strong><br />
-Secuencia de ARN dada:  </p>
-<pre><code>5' – AUGCUATGC – 3'
-</code></pre>
-<p><strong>Pregunta:</strong> ¿Qué error contiene y cómo lo corregirías?  </p>
-<p><strong>Solución:</strong><br />
-El ARN nunca contiene timina (T). La base correcta es uracilo (U).<br />
-La secuencia corregida sería:  </p>
-<pre><code>5' – AUGCUAUGC – 3'
-</code></pre>
-<hr />
-<h2 id="2-complementariedad-incorrecta-en-adn">2. Complementariedad incorrecta en ADN</h2>
-<p><strong>Enunciado:</strong><br />
-Secuencia de ADN (hebra 1):  </p>
-<pre><code>5' – ATGCCGTA – 3'
-</code></pre>
-<p>Hebra complementaria propuesta:  </p>
-<pre><code>3' – TACGGCAT – 5'
-</code></pre>
-<p><strong>Pregunta:</strong> ¿Es correcta la complementariedad?  </p>
-<p><strong>Solución:</strong><br />
-Sí, es correcta. Cada A está emparejada con T y cada G con C.<br />
-La complementariedad es adecuada, manteniendo el antiparalelismo.  </p>
-<hr />
-<h2 id="3-orientacion-invertida">3. Orientación invertida</h2>
-<p><strong>Enunciado:</strong><br />
-Supuesta doble hélice:  </p>
-<pre><code>Hebra 1: 5' – AGCTTAGC – 3'  
-Hebra 2: 5' – TCGAATCG – 3'
-</code></pre>
-<p><strong>Pregunta:</strong> ¿Cuál es el error?  </p>
-<p><strong>Solución:</strong><br />
-Las hebras deben ser antiparalelas. La hebra 2 debería estar escrita como:  </p>
-<pre><code>3' – TCGAATCG – 5'
-</code></pre>
-<hr />
-<h2 id="4-secuencia-hibrida-imposible">4. Secuencia híbrida imposible</h2>
-<p><strong>Enunciado:</strong><br />
-Secuencia dada:  </p>
-<pre><code>5' – AUGTCCGA – 3'
-</code></pre>
-<p><strong>Pregunta:</strong> ¿Qué incoherencia hay?  </p>
-<p><strong>Solución:</strong><br />
-La secuencia mezcla nucleótidos de ARN (U) con timina (T), que solo aparece en ADN.<br />
-Debe escribirse todo en ADN (con T, sin U) o todo en ARN (con U, sin T).  </p>
-<hr />
-<h2 id="5-uracilo-en-adn">5. Uracilo en ADN</h2>
-<p><strong>Enunciado:</strong><br />
-Secuencia de ADN propuesta:  </p>
-<pre><code>5' – ATGCUAGC – 3'
-</code></pre>
-<p><strong>Pregunta:</strong> ¿Cuál es el error en esta cadena?  </p>
-<p><strong>Solución:</strong><br />
-El ADN nunca contiene uracilo (U). En su lugar debe estar timina (T).<br />
-La secuencia corregida sería:  </p>
-<pre><code>5' – ATGCTAGC – 3'
-</code></pre>
+<h1 id="el-descubrimiento-de-la-estructura-del-adn">El descubrimiento de la estructura del ADN</h1>
+<h2 id="introduccion">Introducción</h2>
+<p>La identificación de la estructura del ADN es uno de los hitos más relevantes en la historia de la biología y la medicina. Comprender cómo se organiza esta molécula permitió explicar el mecanismo de la herencia biológica y abrió el camino a la biología molecular moderna.</p>
+<h2 id="contexto-historico">Contexto histórico</h2>
+<p>A principios del siglo XX, ya se sabía que el ADN estaba relacionado con la herencia genética, pero su estructura interna seguía siendo un misterio. Durante la década de 1950, varios grupos de investigación en Europa y Estados Unidos competían por resolver el enigma.</p>
+<h2 id="rosalind-franklin-y-maurice-wilkins">Rosalind Franklin y Maurice Wilkins</h2>
+<p>En el King's College de Londres, <strong>Rosalind Franklin</strong> y <strong>Maurice Wilkins</strong> trabajaban en el análisis del ADN mediante difracción de rayos X.<br />
+- Franklin era una experta en cristalografía y consiguió obtener imágenes de altísima calidad de fibras de ADN.<br />
+- Su famosa <strong>Fotografía 51</strong>, obtenida en 1952, mostró un patrón en forma de X que sugería una estructura helicoidal.<br />
+- Wilkins, colega suyo, mantenía una relación complicada con Franklin, pero también contribuyó a la investigación con estudios de difracción.</p>
+<h2 id="watson-y-crick">Watson y Crick</h2>
+<p>En la Universidad de Cambridge, <strong>James Watson</strong> y <strong>Francis Crick</strong> intentaban construir modelos moleculares basados en los datos disponibles.<br />
+- Sin acceso directo a las mejores imágenes, dependían de información publicada o compartida de manera indirecta.<br />
+- A principios de 1953, tras conocer (sin el consentimiento de Franklin) la Fotografía 51 gracias a Wilkins, tuvieron la pista definitiva para confirmar la estructura.</p>
+<h2 id="el-modelo-de-la-doble-helice">El modelo de la doble hélice</h2>
+<p>En abril de 1953, Watson y Crick publicaron en <em>Nature</em> su 
+<strong><a href="../01_Watson-Crick-Nature1953-2_GeneticImplications.pdf">célebre artículo</a></strong> describiendo la <strong>doble hélice del ADN</strong>:<br />
+- Dos cadenas antiparalelas enrolladas en espiral.<br />
+- Bases nitrogenadas enfrentadas y unidas por puentes de hidrógeno (A con T, C con G).<br />
+- Una estructura que permitía explicar de manera elegante la replicación genética.</p>
+<p><img alt="Francis Crick y James Watson" src="../B101/01_watsoncrick.png" title="Francis Crick y James Watson" />
+<em>Crick y Watson con su modelo de ADN en 1953</em></p>
+<h2 id="reconocimiento-y-controversia">Reconocimiento y controversia</h2>
+<p>En 1962, <strong>Watson, Crick y Wilkins</strong> recibieron el <strong>Premio Nobel de Fisiología o Medicina</strong> por el descubrimiento de la estructura del ADN. Rosalind Franklin no fue reconocida, ya que había fallecido en 1958 a los 37 años, y el Nobel no se concede de manera póstuma.  </p>
+<p>Hoy en día, se reconoce ampliamente que el trabajo de Franklin fue <strong>esencial y decisivo</strong>, y su contribución forma parte inseparable de la historia de este descubrimiento.</p>
+<h2 id="conclusion">Conclusión</h2>
+<p>El hallazgo de la doble hélice no fue el resultado del trabajo aislado de unos pocos, sino de una red de esfuerzos complementarios y, a veces, conflictivos. La historia de Franklin, Wilkins, Watson y Crick es un ejemplo de la complejidad del quehacer científico y de la importancia de reconocer justamente todas las contribuciones.</p>
 
 
 
