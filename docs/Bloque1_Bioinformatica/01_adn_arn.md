@@ -41,13 +41,15 @@ La organización secuencial de nucleótidos es lo que constituye la “secuencia
 ---
 
 ## 4. Descubrimiento de la estructura del ADN
-El papel de **Rosalind Franklin**, con su célebre “Foto 51” obtenida por difracción de rayos X, fue esencial para determinar la estructura helicoidal del ADN. Este hallazgo permitió a Watson y Crick proponer el modelo de la **doble hélice**, que explica cómo se almacena y transmite la información genética.
+El papel de **Rosalind Franklin**, con su célebre “Foto 51” obtenida por difracción de rayos X, fue esencial para determinar la estructura helicoidal del ADN. Este hallazgo permitió a **[Watson y Crick](01_descubrimiento_adn.md)** proponer el modelo de la **doble hélice**, que explica cómo se almacena y transmite la información genética.
 
 ![Rosalind Franklin](B101/01_rosalind.png "Rosalind Franklin")
 *Rosalind Franklin*
 
 ![Foto 51](B101/01_foto51.png "Foto 51")
 *Foto 51*
+
+**[Estructura del ADN y el ARN](01_estructura_adn_arn.md)**
 
 ---
 
@@ -84,4 +86,4 @@ La representación matemática abre la puerta a una comprensión más profunda d
 ## 7. Conclusión
 El estudio del ADN y ARN, desde su origen hasta su modelado matemático, proporciona las herramientas conceptuales y prácticas necesarias para la bioinformática moderna. Este primer bloque sienta las bases para comprender cómo la información genética puede analizarse, representarse y predecirse con métodos computacionales.
 
- **[Ejercicio1](ejercicios_adn_arn_interactivo.md)**.
+ **[Ejercicio1](01_ejercicios_adn_arn_interactivo.md)**.
