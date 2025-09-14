@@ -1,5 +1,5 @@
 
-# Dogma Cetral de la Biología Molecular
+# Dogma Central de la Biología Molecular
 
 ## Introducción
 El **dogma central de la biología molecular**, formulado por Francis Crick en 1958, describe el flujo unidireccional de la información genética en los organismos vivos:
