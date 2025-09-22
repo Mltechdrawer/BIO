@@ -1,4 +1,3 @@
-
 # Dogma Central de la Biología Molecular
 
 ## Introducción
@@ -35,7 +34,17 @@ Este dogma explica cómo la información hereditaria se utiliza para construir l
 <p>- Ocurre en el caso de los priones, donde una proteína mal plegada induce a otras proteínas a adoptar la misma conformación anómala (ejemplo: enfermedad de Creutzfeldt-Jakob).</p>
 </details>
 
+## La célula
+
+Antes de adentrarnos en los procesos de replicación, transcripción y traducción, es importante recordar el contexto en el que se desarrollan: la **célula**. Puedes revisar sus características y tipos principales en la [Célula](01_celula.md).
+
+
 ## Replicación - Transcripción - Traducción
 
 ![Replicación - Transcripción - Traducción](B101/rtt.png "Replicación - Transcripción - Traducción")
 
+**[Replicación](01_replicacion.md)**
+
+**[Transcripción](01_transcripcion.md)**
+
+**[Traducción](01_traduccion.md)**
