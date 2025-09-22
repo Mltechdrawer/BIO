@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../01_adn_arn/">
-      
-      
-        <link rel="next" href="../03_expresion_genica_transcriptomica/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +16,7 @@
     
     
       
-        <title>Secuenciación y Genoma - Bioinformática</title>
+        <title>Meselson y Stahl - Bioinformática</title>
       
     
     
@@ -64,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#secuenciacion-de-adn-y-arn-genoma" class="md-skip">
+        <a href="#meselson-y-stahl" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Secuenciación y Genoma
+              Meselson y Stahl
             
           </span>
         </div>
@@ -237,20 +233,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -266,7 +260,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Bloque 1. Bioinformática
@@ -300,19 +294,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../02_secuenciacion_genoma/" class="md-nav__link">
         
   
   
@@ -323,7 +308,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -630,6 +614,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#el-experimento-de-meselson-y-stahl" class="md-nav__link">
+    <span class="md-ellipsis">
+      El experimento de Meselson y Stahl
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -644,21 +645,23 @@
 
 
 
-<h1 id="secuenciacion-de-adn-y-arn-genoma">Secuenciación de ADN y ARN. Genoma</h1>
-<p>Contenido en construcción</p>
-<details>
-<summary>💡 El ADN en cifras</summary>
-<p>- Cada célula del cuerpo humano (con la excepción de los glóbulos rojos) <strong> contiene una secuencia de ADN de 3.200 millones de letras de longitud </strong>, es decir, 2 metros de ADN. Y es que un trozo de ADN de 1 mm de longitud contiene una secuencia de pares de bases de más de 3 millones de letras.</p>
-<p>Es posible escribir tantas instrucciones con sólo 4 letras, tal y como explica <strong> Joel Levy </strong> en 100 analogías científicas: 
-</p>
-<p>- Las proteínas están compuestas por 20 aminoácidos diferentes, así que lo que se necesita es un código capaz de cifrar al menos 20 mensajes (o codones) diferentes. Como cada letra presenta cuatro opciones, las secuencias de dos bases sólo permitirían 16 (4x4) palabras de dos letras, o codones. Pero si las secuencias tienen tres bases, es posible transmitir 64 (4x4x4) codones distintos, más que suficiente si se quieren especificar 20 aminoácidos. </p>
-<p>- Para asimilar la cantidad de letras que componen el genoma humano, debemos imaginarnos tecleando en el ordenador <strong>60 palabras por minuto, 8 horas al día... durante 50 años</strong>. Y es que el ADN de una <strong>simple ameba unicelular</strong> ya contiene hasta 400 millones de bits de información genética, lo suficiente para escribir 80 libros de 500 páginas cada uno.
-</p>
-<p>- El ADN puede preservarse durante mucho tiempo: las muestras más antiguas encontradas hasta el momento corresponden a plantas, mamuts y otros animales siberianos de hace <strong>400 mil años</strong>.
-</p>
-<p>- Las sustancias químicas y otros agentes atacan y dañan con frecuencia el ADN de una célula humana a un ritmo, en términos generales, de 10.000 veces al día. Alteraciones en un solo gen son las causantes de entre 3.000 y 4.000 enfermedades hereditarias.
-</p>
-</details>
+<h1 id="meselson-y-stahl">Meselson y Stahl</h1>
+<h3 id="el-experimento-de-meselson-y-stahl">El experimento de Meselson y Stahl</h3>
+<p>Para comprobar cuál de los modelos de replicación del ADN era correcto, Matthew Meselson y Franklin Stahl diseñaron un experimento brillante en 1958. Su estrategia se basó en marcar el ADN con <strong>isótopos de nitrógeno</strong> y observar su distribución tras varios ciclos de replicación:</p>
+<ol>
+<li>Cultivaron bacterias (<em>E. coli</em>) en un medio que contenía <strong>nitrógeno pesado (^15N)</strong>. De esta forma, todo su ADN se volvió más denso de lo habitual.  </li>
+<li>Tras varias generaciones, trasladaron las bacterias a un medio con <strong>nitrógeno ligero (^14N)</strong>, permitiendo que el ADN nuevo se sintetizara con el isótopo ligero.  </li>
+<li>A medida que las células se dividían, extrajeron el ADN y lo separaron mediante <strong>centrifugación en gradiente de densidad</strong>.  </li>
+</ol>
+<p>Los resultados fueron reveladores:
+- Tras <strong>una ronda de replicación</strong>, todo el ADN tenía una densidad <strong>intermedia</strong>, descartando el modelo conservativo.<br />
+- Tras <strong>dos rondas</strong>, aparecieron moléculas con densidad intermedia y ligera, confirmando el modelo <strong>semiconservativo</strong>.  </p>
+<p>Este experimento se conoce como “el experimento más bello en biología” y constituye una demostración experimental directa del modelo propuesto por Watson y Crick.</p>
+<p><img alt="Experimento Meselson Stahl" src="../B101/meselsonstahl_0.png" /></p>
+<p><img alt="Experimento Meselson Stahl" src="../B101/meselsonstahl_1.png" /></p>
+<blockquote>
+<p><strong>Conclusión:</strong> el ADN se replica de forma <strong>semiconservativa</strong>, lo que garantiza que cada molécula hija conserve una hebra parental como molde para la síntesis de la nueva.</p>
+</blockquote>
 
 
 

@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../01_adn_arn/">
-      
-      
-        <link rel="next" href="../03_expresion_genica_transcriptomica/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +16,7 @@
     
     
       
-        <title>Secuenciación y Genoma - Bioinformática</title>
+        <title>Replicación - Bioinformática</title>
       
     
     
@@ -64,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#secuenciacion-de-adn-y-arn-genoma" class="md-skip">
+        <a href="#replicacion" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Secuenciación y Genoma
+              Replicación
             
           </span>
         </div>
@@ -237,20 +233,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -266,7 +260,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Bloque 1. Bioinformática
@@ -300,19 +294,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../02_secuenciacion_genoma/" class="md-nav__link">
         
   
   
@@ -323,7 +308,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -630,6 +614,41 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelos-de-replicacion-del-adn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modelos de replicación del ADN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replicacion-del-adn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Replicación del ADN
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -644,21 +663,31 @@
 
 
 
-<h1 id="secuenciacion-de-adn-y-arn-genoma">Secuenciación de ADN y ARN. Genoma</h1>
-<p>Contenido en construcción</p>
-<details>
-<summary>💡 El ADN en cifras</summary>
-<p>- Cada célula del cuerpo humano (con la excepción de los glóbulos rojos) <strong> contiene una secuencia de ADN de 3.200 millones de letras de longitud </strong>, es decir, 2 metros de ADN. Y es que un trozo de ADN de 1 mm de longitud contiene una secuencia de pares de bases de más de 3 millones de letras.</p>
-<p>Es posible escribir tantas instrucciones con sólo 4 letras, tal y como explica <strong> Joel Levy </strong> en 100 analogías científicas: 
-</p>
-<p>- Las proteínas están compuestas por 20 aminoácidos diferentes, así que lo que se necesita es un código capaz de cifrar al menos 20 mensajes (o codones) diferentes. Como cada letra presenta cuatro opciones, las secuencias de dos bases sólo permitirían 16 (4x4) palabras de dos letras, o codones. Pero si las secuencias tienen tres bases, es posible transmitir 64 (4x4x4) codones distintos, más que suficiente si se quieren especificar 20 aminoácidos. </p>
-<p>- Para asimilar la cantidad de letras que componen el genoma humano, debemos imaginarnos tecleando en el ordenador <strong>60 palabras por minuto, 8 horas al día... durante 50 años</strong>. Y es que el ADN de una <strong>simple ameba unicelular</strong> ya contiene hasta 400 millones de bits de información genética, lo suficiente para escribir 80 libros de 500 páginas cada uno.
-</p>
-<p>- El ADN puede preservarse durante mucho tiempo: las muestras más antiguas encontradas hasta el momento corresponden a plantas, mamuts y otros animales siberianos de hace <strong>400 mil años</strong>.
-</p>
-<p>- Las sustancias químicas y otros agentes atacan y dañan con frecuencia el ADN de una célula humana a un ritmo, en términos generales, de 10.000 veces al día. Alteraciones en un solo gen son las causantes de entre 3.000 y 4.000 enfermedades hereditarias.
-</p>
-</details>
+<h1 id="replicacion">Replicación</h1>
+<h2 id="introduccion">Introducción</h2>
+<p>La replicación del ADN es el proceso mediante el cual una célula duplica su material genético antes de dividirse. Se basa en la complementariedad de bases, donde cada hebra parental sirve de molde para sintetizar una nueva hebra. Intervienen enzimas clave como la ADN polimerasa, helicasa y primasa, que garantizan la fidelidad y la continuidad de la secuencia. Este mecanismo es semiconservativo: cada molécula hija conserva una hebra original y una nueva. La precisión en la replicación es esencial para mantener la estabilidad genética y prevenir mutaciones.</p>
+<h2 id="modelos-de-replicacion-del-adn">Modelos de replicación del ADN</h2>
+<p>Cuando se descubrió la estructura de doble hélice del ADN, una de las grandes incógnitas era cómo se copiaba la información genética. Se plantearon tres modelos teóricos:</p>
+<ul>
+<li><strong>Conservativo:</strong> la molécula parental de ADN se mantiene intacta y se sintetiza una molécula completamente nueva.  </li>
+<li><strong>Semiconservativo:</strong> cada hebra parental sirve como molde para una hebra nueva, de modo que las moléculas hijas contienen una hebra antigua y una nueva.  </li>
+<li><strong>Dispersivo:</strong> las hebras hijas se componen de fragmentos de ADN parental y nuevo entremezclados.  </li>
+</ul>
+<p>El famoso experimento de <strong><a href="../01_meselsonstahl/">Meselson y Stahl (1958)</a></strong>, utilizando isótopos de nitrógeno y centrifugación en gradiente de densidad, demostró que la replicación del ADN es <strong>semiconservativa</strong>, tal y como predijeron Watson y Crick.</p>
+<p><img alt="Modelos de replicación del ADN" src="../B101/replica1.png" /></p>
+<p><em>Figura: Representación de los modelos conservativo, semiconservativo y dispersivo de replicación del ADN.</em></p>
+<h2 id="replicacion-del-adn">Replicación del ADN</h2>
+<p>La replicación del ADN es un proceso esencial para la vida, porque asegura que cada célula hija reciba una copia exacta de la información genética. Todo comienza cuando la helicasa rompe los puentes de hidrógeno entre las dos hebras del ADN, abriendo la llamada horquilla de replicación. A continuación, la primasa sintetiza pequeños fragmentos de ARN que sirven como cebadores, permitiendo a la ADN polimerasa iniciar la síntesis de nuevas hebras complementarias.</p>
+<p>En la hebra líder, la síntesis ocurre de manera continua siguiendo la dirección de la horquilla. En cambio, en la hebra rezagada se forman los fragmentos de Okazaki, que luego son unidos por la ADN ligasa para generar una hebra continua. Este mecanismo es semiconservativo, ya que cada molécula resultante conserva una hebra original y una hebra nueva.</p>
+<p>La precisión de este proceso es crítica: las enzimas poseen mecanismos de corrección de errores que minimizan las mutaciones. Gracias a la replicación, la información genética se transmite fielmente de generación en generación, manteniendo la estabilidad del genoma.</p>
+<p><img alt="Replicación" src="../B101/replica4.png" title="Replicación" /></p>
+<p><em>Figura: Proceso de replicación</em></p>
+<p><img alt="Replicación" src="../B101/replica2.png" title="Replicación" /></p>
+<p><em>Figura: Representación de la síntesis de las dos cadenas</em></p>
+<p><img alt="Replicación" src="../B101/replica3.png" title="Replicación" /></p>
+<p><em>Figura: Proceso de replicación</em></p>
+<p><img alt="Replicación" src="../B101/replica5.png" title="Replicación" /></p>
+<p><em>Figura: Proceso de replicación</em></p>
 
 
 
