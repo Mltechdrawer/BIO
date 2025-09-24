@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../01_adn_arn/">
-      
-      
-        <link rel="next" href="../03_expresion_genica_transcriptomica/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +16,7 @@
     
     
       
-        <title>Secuenciación y Genoma - Bioinformática</title>
+        <title>Traducción - Bioinformática</title>
       
     
     
@@ -64,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#secuenciacion-de-adn-y-arn-genoma" class="md-skip">
+        <a href="#traduccion" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Secuenciación y Genoma
+              Traducción
             
           </span>
         </div>
@@ -237,20 +233,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -266,7 +260,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Bloque 1. Bioinformática
@@ -300,19 +294,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../02_secuenciacion_genoma/" class="md-nav__link">
         
   
   
@@ -323,7 +308,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -630,6 +614,83 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traduccion-del-adn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Traducción del ADN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Traducción del ADN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procesamiento-del-arnm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Procesamiento del ARNm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procesamiento-del-transcrito-primario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Procesamiento del transcrito primario
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#splicing-alternativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Splicing alternativo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estructura-del-arnt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura del ARNt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traduccion-en-el-ribosoma" class="md-nav__link">
+    <span class="md-ellipsis">
+      Traducción en el ribosoma
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -644,21 +705,54 @@
 
 
 
-<h1 id="secuenciacion-de-adn-y-arn-genoma">Secuenciación de ADN y ARN. Genoma</h1>
-<p>Contenido en construcción</p>
-<details>
-<summary>💡 El ADN en cifras</summary>
-<p>- Cada célula del cuerpo humano (con la excepción de los glóbulos rojos) <strong> contiene una secuencia de ADN de 3.200 millones de letras de longitud </strong>, es decir, 2 metros de ADN. Y es que un trozo de ADN de 1 mm de longitud contiene una secuencia de pares de bases de más de 3 millones de letras.</p>
-<p>Es posible escribir tantas instrucciones con sólo 4 letras, tal y como explica <strong> Joel Levy </strong> en 100 analogías científicas: 
-</p>
-<p>- Las proteínas están compuestas por 20 aminoácidos diferentes, así que lo que se necesita es un código capaz de cifrar al menos 20 mensajes (o codones) diferentes. Como cada letra presenta cuatro opciones, las secuencias de dos bases sólo permitirían 16 (4x4) palabras de dos letras, o codones. Pero si las secuencias tienen tres bases, es posible transmitir 64 (4x4x4) codones distintos, más que suficiente si se quieren especificar 20 aminoácidos. </p>
-<p>- Para asimilar la cantidad de letras que componen el genoma humano, debemos imaginarnos tecleando en el ordenador <strong>60 palabras por minuto, 8 horas al día... durante 50 años</strong>. Y es que el ADN de una <strong>simple ameba unicelular</strong> ya contiene hasta 400 millones de bits de información genética, lo suficiente para escribir 80 libros de 500 páginas cada uno.
-</p>
-<p>- El ADN puede preservarse durante mucho tiempo: las muestras más antiguas encontradas hasta el momento corresponden a plantas, mamuts y otros animales siberianos de hace <strong>400 mil años</strong>.
-</p>
-<p>- Las sustancias químicas y otros agentes atacan y dañan con frecuencia el ADN de una célula humana a un ritmo, en términos generales, de 10.000 veces al día. Alteraciones en un solo gen son las causantes de entre 3.000 y 4.000 enfermedades hereditarias.
-</p>
-</details>
+<h1 id="traduccion">Traducción</h1>
+<h2 id="introduccion">Introducción</h2>
+<p>La traducción es el proceso mediante el cual la información del ARNm se convierte en una secuencia de aminoácidos, formando una proteína funcional. Ocurre en los ribosomas, donde el ARNm se lee en tripletes llamados codones, cada uno especificando un aminoácido. El ARNt actúa como adaptador, transportando los aminoácidos correspondientes y acoplándolos en el orden dictado por el ARNm. Factores de iniciación, elongación y terminación coordinan las fases de este proceso. La traducción es crucial porque enlaza la información genética con la función biológica de la célula.</p>
+<h2 id="traduccion-del-adn">Traducción del ADN</h2>
+<p>La traducción convierte el lenguaje de los nucleótidos en el de los aminoácidos, produciendo una proteína funcional. Este proceso ocurre en los ribosomas, que se ensamblan alrededor de la molécula de ARNm. El ribosoma lee los codones de tres en tres nucleótidos, y cada uno es reconocido por un ARN de transferencia (ARNt) cargado con el aminoácido correspondiente.</p>
+<p>La proteína se construye siguiendo tres fases: inicio, donde se coloca el primer aminoácido; elongación, en la que los ARNt van aportando nuevos aminoácidos en cadena; y terminación, que se da cuando el ribosoma encuentra un codón de parada. El resultado es una secuencia polipeptídica que posteriormente se pliega y adquiere su conformación activa. Gracias a la traducción, la información genética se transforma en función celular.</p>
+<h3 id="procesamiento-del-arnm">Procesamiento del ARNm</h3>
+<p>La figura muestra cómo a partir del ADN se obtiene un <strong>transcrito primario (ARN)</strong>.<br />
+La ARN polimerasa copia la <strong>cadena molde</strong> del ADN (3’ → 5’) para producir un ARN complementario en dirección 5’ → 3’.<br />
+El resultado inicial es un transcrito primario que luego será procesado.<br />
+A la derecha se representan los tres tipos principales de ARN implicados en la expresión génica: </p>
+<ul>
+<li><strong>ARN mensajero (ARNm)</strong>, que lleva la información.  </li>
+<li><strong>ARN de transferencia (ARNt)</strong>, que aporta aminoácidos durante la traducción.  </li>
+<li><strong>ARN ribosómico (ARNr)</strong>, que forma parte del ribosoma.  </li>
+</ul>
+<p><img alt="Procesamiento del ARNm" src="../B101/traduce0.png" title="Procesamiento del ARNm" /></p>
+<hr />
+<h3 id="procesamiento-del-transcrito-primario">Procesamiento del transcrito primario</h3>
+<p>Esta figura representa el <strong>procesamiento del transcrito primario</strong> en células eucariotas.<br />
+Incluye tres pasos fundamentales:<br />
+- Adición de una <strong>cap 5’</strong>, que protege y facilita la traducción.<br />
+- Incorporación de una <strong>cola poli-A</strong> en el extremo 3’, que estabiliza la molécula.<br />
+- Eliminación de <strong>intrones</strong> y unión de <strong>exones</strong> mediante <strong>empalme (splicing)</strong>.<br />
+El resultado es un <strong>ARNm maduro</strong>, listo para salir del núcleo hacia el citoplasma.</p>
+<p><img alt="Procesamiento del ARNm" src="../B101/traduce1.png" title="Procesamiento del ARNm" /></p>
+<hr />
+<h3 id="splicing-alternativo">Splicing alternativo</h3>
+<p>Aquí se ilustra el fenómeno del <strong>splicing alternativo</strong>, que permite generar diferentes ARNm a partir de un mismo transcrito primario.<br />
+Dependiendo de qué exones se incluyan o excluyan, se obtienen distintas versiones de ARNm, que tras la traducción producen <strong>proteínas diferentes</strong> (ejemplo: proteína A, B o C).<br />
+Este mecanismo explica la gran diversidad proteica a partir de un número limitado de genes.</p>
+<p><img alt="Splicing alternativo" src="../B101/traduce2.png" title="Splicing alternativo" /></p>
+<hr />
+<h3 id="estructura-del-arnt">Estructura del ARNt</h3>
+<p>La figura muestra la estructura del <strong>ARN de transferencia (ARNt)</strong>.<br />
+En su forma secundaria se representa como una <strong>hoja de trébol</strong>, con:<br />
+- Un <strong>anticodón</strong>, que reconoce al codón complementario en el ARNm.<br />
+- Un <strong>sitio de unión al aminoácido</strong> en el extremo 3’.<br />
+En su forma tridimensional, el ARNt se pliega en una estructura compacta que facilita la entrega del aminoácido al ribosoma durante la traducción.</p>
+<p><img alt="TraEstructura del ARNtducción" src="../B101/traduce3.png" title="Estructura del ARNt" /></p>
+<hr />
+<h3 id="traduccion-en-el-ribosoma">Traducción en el ribosoma</h3>
+<p>Este esquema ilustra el proceso de <strong>traducción</strong> en el ribosoma.<br />
+El <strong>ARNm</strong> se lee en tripletes de bases (codones), cada uno reconocido por un <strong>ARNt</strong> con el anticodón complementario que transporta un aminoácido específico.<br />
+El ribosoma va enlazando los aminoácidos de manera secuencial, generando una <strong>cadena polipeptídica en crecimiento</strong>.<br />
+Es el paso final de la expresión génica, en el que la información contenida en el ADN se materializa en forma de proteínas.</p>
+<p><img alt="Traducción en el ribosoma" src="../B101/traduce4.png" title="Traducción en el ribosoma" /></p>
+<p><strong><a href="../01_proteinas/">Proteína</a></strong></p>
 
 
 

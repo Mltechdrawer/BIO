@@ -36,6 +36,26 @@ El resultado es un **ARNm maduro**, listo para salir del núcleo hacia el citopl
 
 ---
 
+<details>
+<summary>💡 Intrones - Exones</summary>
+<p><strong> Intrones </strong></p>
+<p>- Son las secuencias no codificantes que aparecen intercaladas entre exones en los genes eucariotas.</p>
+<p>- Se transcriben inicialmente al ARN pre-mensajero (pre-ARNm), pero se eliminan durante el proceso de splicing (corte y empalme).</p>
+<p>- Aunque no codifican proteínas, los intrones no son “ADN basura”:
+</p>
+<p>-- Pueden contener secuencias reguladoras que influyen en cómo y cuándo se expresan los genes. </p>
+<p>-- Favorecen el fenómeno de splicing alternativo, que permite generar distintas proteínas a partir de un mismo gen. </p>
+
+<p><strong> Exones </strong></p>
+<p>- Son las secuencias codificantes de un gen.</p>
+<p>- Contienen la información que, tras el proceso de transcripción y maduración del ARN, se mantendrá en el ARN mensajero (ARNm) maduro.</p>
+<p>- Finalmente, esa información se traduce en proteínas.
+</p>
+<p>- Pueden incluir no solo regiones que codifican aminoácidos, sino también algunas regiones no traducidas (UTRs) que son reguladoras. </p>
+</details>
+
+---
+
 ### Splicing alternativo
 Aquí se ilustra el fenómeno del **splicing alternativo**, que permite generar diferentes ARNm a partir de un mismo transcrito primario.  
 Dependiendo de qué exones se incluyan o excluyan, se obtienen distintas versiones de ARNm, que tras la traducción producen **proteínas diferentes** (ejemplo: proteína A, B o C).  

@@ -106,4 +106,12 @@ La representación matemática abre la puerta a una comprensión más profunda d
 ## 7. Conclusión
 El estudio del ADN y ARN, desde su origen hasta su modelado matemático, proporciona las herramientas conceptuales y prácticas necesarias para la bioinformática moderna. Este primer bloque sienta las bases para comprender cómo la información genética puede analizarse, representarse y predecirse con métodos computacionales.
 
+---
+
  **[Ejercicio1](01_ejercicios_adn_arn_interactivo.md)**.
+
+---
+
+ **[Plataformas](01_recursos.md)**.
+
+---
