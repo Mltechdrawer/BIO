@@ -44,6 +44,9 @@ internacional permitió identificar y mapear la mayoría de los genes humanos, y
 - **Biotecnología**: ingeniería genética, desarrollo de organismos modificados y bioinformática aplicada.
 - **Agricultura**: mejora genética de cultivos y resistencia a enfermedades.
 
+[Datos Genoma](02_datosgenoma.md)
+
+
 ## Conclusión
 El estudio del genoma permite comprender la base molecular de la vida y ofrece herramientas poderosas 
 para la investigación biomédica, la biotecnología y la ciencia de datos aplicada a la biología. 

@@ -23,4 +23,13 @@ La NGS engloba un conjunto de tecnologías que permiten secuenciar millones de f
 [Secuenciación de Nueva Generación](02_secuenciacionng.md)
 
 ## Secuenciación de tercera generación (2010)
-La secuenciación de tercera generación se caracteriza por la capacidad de leer moléculas individuales de ADN sin necesidad de amplificación por PCR, lo que reduce errores y permite obtener lecturas mucho más largas que en tecnologías anteriores. Plataformas como **PacBio (SMRT sequencing)** y **Oxford Nanopore Technologies (ONT)** han revolucionado el campo al generar lecturas de decenas de kilobases, llegando incluso a superar el millón de bases en un solo fragmento con Nanopore. Estas lecturas largas facilitan el ensamblaje de genomas complejos, la resolución de regiones repetitivas y el análisis de isoformas completas en transcriptómica. Aunque inicialmente presentaban mayores tasas de err
+La secuenciación de tercera generación se caracteriza por la capacidad de leer moléculas individuales de ADN sin necesidad de amplificación por PCR, lo que reduce errores y permite obtener lecturas mucho más largas que en tecnologías anteriores. Plataformas como **PacBio (SMRT sequencing)** y **Oxford Nanopore Technologies (ONT)** han revolucionado el campo al generar lecturas de decenas de kilobases, llegando incluso a superar el millón de bases en un solo fragmento con Nanopore. Estas lecturas largas facilitan el ensamblaje de genomas complejos, la resolución de regiones repetitivas y el análisis de isoformas completas en transcriptómica. Aunque inicialmente presentaban mayores tasas de error.
+
+[Secuenciación de Nueva Generación](02_secuenciacionng.md)
+
+## Algoritmos de secuenciación
+
+Los algoritmos de secuenciación son el puente entre los datos crudos obtenidos de los secuenciadores y el conocimiento biológico que extraemos de ellos. Como ninguna tecnología actual puede leer un genoma de una sola vez, los fragmentos generados deben ensamblarse mediante métodos computacionales que resuelvan solapamientos, errores y repeticiones. A lo largo de la historia han evolucionado desde enfoques simples y limitados hasta sofisticados grafos y estrategias híbridas que permiten reconstruir genomas completos. Su desarrollo es clave para que la bioinformática convierta grandes volúmenes de datos (secuencias) en información y ciencia.  
+
+[Algoritmos de secuenciación](02_algoritmos_secuenciacion.md)
+
