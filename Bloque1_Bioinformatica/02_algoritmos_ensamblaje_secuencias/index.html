@@ -16,7 +16,7 @@
     
     
       
-        <title>Secuenciación - Bioinformática</title>
+        <title>Algoritmos de ensamblaje de secuencias - Bioinformática</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#secuenciacion" class="md-skip">
+        <a href="#algoritmos-de-ensamblaje-de-secuencias" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Secuenciación
+              Algoritmos de ensamblaje de secuencias
             
           </span>
         </div>
@@ -621,45 +621,111 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#breves-biografias-de-pioneros" class="md-nav__link">
+  <a href="#introduccion" class="md-nav__link">
     <span class="md-ellipsis">
-      Breves biografías de pioneros
+      Introducción
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#secuenciacion-de-sanger-clasica-1977" class="md-nav__link">
+  <a href="#algoritmos-clasicos-vision-historica" class="md-nav__link">
     <span class="md-ellipsis">
-      Secuenciación de Sanger - Clásica (1977)
+      Algoritmos clásicos (visión histórica)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Algoritmos clásicos (visión histórica)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algoritmos-greedy-avaro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algoritmos greedy (avaro)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overlaplayoutconsensus-olc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overlap–Layout–Consensus (OLC)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grafos-de-de-bruijn-el-estandar-para-lecturas-cortas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grafos de de Bruijn: el estándar para lecturas cortas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Grafos de de Bruijn: el estándar para lecturas cortas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problemas-y-soluciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problemas y soluciones
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variantes-y-mejoras-de-los-grafos-de-de-bruijn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variantes y mejoras de los grafos de de Bruijn
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#secuenciacion-de-nueva-generacion-ngs-2005" class="md-nav__link">
+  <a href="#ensamblaje-con-lecturas-largas" class="md-nav__link">
     <span class="md-ellipsis">
-      Secuenciación de nueva generación (NGS) (2005)
+      Ensamblaje con lecturas largas
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#secuenciacion-de-tercera-generacion-2010" class="md-nav__link">
+  <a href="#ejemplos-de-ensambladores-populares" class="md-nav__link">
     <span class="md-ellipsis">
-      Secuenciación de tercera generación (2010)
+      Ejemplos de ensambladores populares
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#algoritmos-de-secuenciacion" class="md-nav__link">
+  <a href="#consideraciones-practicas-y-desafios-actuales" class="md-nav__link">
     <span class="md-ellipsis">
-      Algoritmos de secuenciación
+      Consideraciones prácticas y desafíos actuales
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resumen
     </span>
   </a>
   
@@ -681,33 +747,80 @@
 
 
 
-<h1 id="secuenciacion">Secuenciación</h1>
-<p>La secuenciación consiste en determinar el orden de los nucleótidos (adenina, timina, citosina y guanina en el ADN; adenina, uracilo, citosina y guanina en el ARN). Esta información es la base sobre la que se construyen la genómica, la transcriptómica y la biología de sistemas. Ninguna tecnología actual puede leer de una sola vez un genoma completo: todas requieren dividirlo en fragmentos, leerlos, y después ensamblarlos mediante algoritmos computacionales.</p>
-<p><img alt="Secuenciación" src="../B102/secuenciacion.png" title="Secuenciación" /></p>
-<h2 id="breves-biografias-de-pioneros">Breves biografías de pioneros</h2>
+<h1 id="algoritmos-de-ensamblaje-de-secuencias">Algoritmos de ensamblaje de secuencias</h1>
+<h2 id="introduccion">Introducción</h2>
+<p>La secuenciación moderna no produce genomas completos de una sola lectura, sino millones de fragmentos que deben ser <strong>reconstruidos</strong> computacionalmente. Esta tarea, conocida como <strong>ensamblaje de secuencias</strong>, es uno de los grandes retos de la bioinformática: exige algoritmos eficientes, capaces de lidiar con errores, regiones repetitivas y grandes volúmenes de datos.</p>
+<hr />
+<h2 id="algoritmos-clasicos-vision-historica">Algoritmos clásicos (visión histórica)</h2>
+<h3 id="algoritmos-greedy-avaro">Algoritmos <em>greedy</em> (avaro)</h3>
+<p>Los primeros intentos de ensamblaje se basaron en estrategias <em>greedy</em>, que unen secuencias siempre que se detecta un solapamiento suficientemente largo. Aunque sencillos, estos algoritmos eran muy sensibles a errores y repeticiones, lo que limitaba su utilidad en genomas reales.</p>
+<p><a href="../greedy_assembly.py">Greedy Assembly</a></p>
+<p><a href="../olc_walkthrough/">Greedy diagrama</a></p>
+<h3 id="overlaplayoutconsensus-olc">Overlap–Layout–Consensus (OLC)</h3>
+<p>El paradigma OLC fue dominante durante la era de la secuenciación de Sanger. Consta de tres pasos: (1) encontrar solapamientos entre lecturas, (2) construir un grafo de disposición (<em>layout</em>), y (3) generar una secuencia consenso. Funcionó bien para proyectos como el <strong>Proyecto Genoma Humano</strong>, pero resultó ineficiente con la explosión de datos de la secuenciación masiva.</p>
+<p><a href="../olc_assembly.py">Overlap Layout Consensus Assembly</a></p>
+<p><a href="../olc_walkthrough/">Overlap Layout Consensus diagrama</a></p>
+<hr />
+<h2 id="grafos-de-de-bruijn-el-estandar-para-lecturas-cortas">Grafos de de Bruijn: el estándar para lecturas cortas</h2>
+<p>Con la llegada de la <strong>secuenciación de nueva generación (NGS)</strong>, que produce millones de lecturas cortas (50–300 pb), los algoritmos OLC dejaron de ser viables. El gran salto lo dieron los <strong>grafos de de Bruijn</strong>:</p>
 <ul>
-<li><strong>Paul Berg (1926–2023)</strong>: bioquímico estadounidense que desarrolló las técnicas de ADN recombinante, abriendo el camino para la ingeniería genética moderna. Fue galardonado con el Nobel en 1980. <strong>Manipulación genética y obtención de una molécula de ADN recombinante constituida por fragmentos de ADN de diferentes especies.</strong>  </li>
-<li>
-<p><strong>Frederick Sanger (1918–2013)</strong>: bioquímico británico, pionero en métodos de secuenciación de proteínas y ácidos nucleicos. Desarrolló el método de terminación de cadena que lleva su nombre y que revolucionó la biología molecular, por lo que recibió dos premios Nobel de Química. <strong>Desarrollo de los primeros métodos de secuenciación del ADN.</strong></p>
-</li>
-<li>
-<p><strong>Walter Gilbert (1932–)</strong>: físico y bioquímico estadounidense que codiseñó un método de secuenciación de ADN alternativo al de Sanger. También fue una de las primeras voces en proponer la idea de una secuenciación masiva del genoma humano.<strong>Desarrollo de los primeros métodos de secuenciación del ADN.</strong></p>
-</li>
+<li>Se fragmentan las lecturas en subcadenas de longitud <em>k</em> (<em>k-mers</em>).</li>
+<li>Cada <em>k-mer</em> es un nodo en el grafo.</li>
+<li>Los arcos representan solapamientos de <em>k-1</em> bases.</li>
+<li>El problema del ensamblaje se convierte en recorrer un camino euleriano que cubra todos los arcos.</li>
 </ul>
-<p><img alt="Pioneros en la secuenciación" src="../B102/BergGilbertSanger.png" title="Pioneros en la secuenciación" /></p>
-<h2 id="secuenciacion-de-sanger-clasica-1977">Secuenciación de Sanger - Clásica (1977)</h2>
-<p>El método de Sanger, introducido en 1977, se basa en el uso de dideoxinucleótidos que interrumpen la síntesis de ADN en posiciones específicas. Al separar los fragmentos resultantes por electroforesis y leer el patrón, es posible reconstruir la secuencia original. Durante más de dos décadas fue el método estándar, y gracias a él se completó el Proyecto Genoma Humano. Aunque hoy ha sido desplazado por tecnologías más rápidas y económicas, sigue siendo un método de referencia por su precisión.</p>
-<p><a href="../02_secuenciacionsanger/">Secuenciación de Sanger</a></p>
-<h2 id="secuenciacion-de-nueva-generacion-ngs-2005">Secuenciación de nueva generación (NGS) (2005)</h2>
-<p>La NGS engloba un conjunto de tecnologías que permiten secuenciar millones de fragmentos en paralelo. Plataformas como Illumina o SOLiD han multiplicado exponencialmente la capacidad de generación de datos, reduciendo los costes drásticamente. Aunque las lecturas son más cortas que las obtenidas con Sanger, la combinación de volumen y algoritmos de ensamblaje ha hecho posible proyectos que antes eran impensables, como la secuenciación de metagenomas ambientales o la caracterización de la heterogeneidad tumoral. Hoy en día, la NGS es una herramienta central en investigación biomédica, clínica y biotecnológica.</p>
-<p><a href="../02_secuenciacionng/">Secuenciación de Nueva Generación</a></p>
-<h2 id="secuenciacion-de-tercera-generacion-2010">Secuenciación de tercera generación (2010)</h2>
-<p>La secuenciación de tercera generación se caracteriza por la capacidad de leer moléculas individuales de ADN sin necesidad de amplificación por PCR, lo que reduce errores y permite obtener lecturas mucho más largas que en tecnologías anteriores. Plataformas como <strong>PacBio (SMRT sequencing)</strong> y <strong>Oxford Nanopore Technologies (ONT)</strong> han revolucionado el campo al generar lecturas de decenas de kilobases, llegando incluso a superar el millón de bases en un solo fragmento con Nanopore. Estas lecturas largas facilitan el ensamblaje de genomas complejos, la resolución de regiones repetitivas y el análisis de isoformas completas en transcriptómica. Aunque inicialmente presentaban mayores tasas de error.</p>
-<p><a href="../02_secuenciacionng/">Secuenciación de Nueva Generación</a></p>
-<h2 id="algoritmos-de-secuenciacion">Algoritmos de secuenciación</h2>
-<p>Los algoritmos de secuenciación son el puente entre los datos crudos obtenidos de los secuenciadores y el conocimiento biológico que extraemos de ellos. Como ninguna tecnología actual puede leer un genoma de una sola vez, los fragmentos generados deben ensamblarse mediante métodos computacionales que resuelvan solapamientos, errores y repeticiones. A lo largo de la historia han evolucionado desde enfoques simples y limitados hasta sofisticados grafos y estrategias híbridas que permiten reconstruir genomas completos. Su desarrollo es clave para que la bioinformática convierta grandes volúmenes de datos (secuencias) en información y ciencia.  </p>
-<p><a href="../02_algoritmos_secuenciacion/">Algoritmos de secuenciación</a></p>
-<p><a href="../02_algoritmos_ensamblaje_secuencias/">Algoritmos de ensamblaje de secuencias</a></p>
+<p>Este enfoque es mucho más eficiente en memoria y tiempo que OLC para grandes volúmenes de lecturas cortas.</p>
+<h3 id="problemas-y-soluciones">Problemas y soluciones</h3>
+<ul>
+<li><strong>Errores de secuenciación</strong> generan nodos espurios. → Se corrigen mediante algoritmos de limpieza (<em>error correction</em>).</li>
+<li><strong>Repeticiones</strong> crean bifurcaciones ambiguas. → Estrategias de simplificación del grafo (<em>tip removal</em>, <em>bubble popping</em>).</li>
+<li><strong>Selección del tamaño de <em>k</em></strong>: compromete resolución y conectividad.</li>
+</ul>
+<p><a href="../debruijn_assembly.py">DeBrujin Assembly</a></p>
+<p><a href="../debruijn_walkthrough/">Debrujin diagrama</a></p>
+<hr />
+<h2 id="variantes-y-mejoras-de-los-grafos-de-de-bruijn">Variantes y mejoras de los grafos de de Bruijn</h2>
+<ul>
+<li><strong>Multik-mers</strong>: uso de varios valores de <em>k</em> en paralelo (ej. SPAdes).</li>
+<li><strong>Grafos dispersos (sparse de Bruijn)</strong>: reducen drásticamente la memoria necesaria.</li>
+<li><strong>Omnitigs</strong> y extensiones teóricas: garantizan secuencias correctas bajo ciertas condiciones.</li>
+<li><strong>Ensambladores híbridos</strong>: combinan estrategias de de Bruijn con enfoques OLC o lecturas largas.</li>
+</ul>
+<hr />
+<h2 id="ensamblaje-con-lecturas-largas">Ensamblaje con lecturas largas</h2>
+<p>Las tecnologías <strong>PacBio</strong> y <strong>Oxford Nanopore</strong> generan lecturas largas (10–100 kb), muy útiles para resolver repeticiones, pero con tasas de error elevadas. Aquí resurgen los métodos tipo OLC y <em>string graphs</em>, adaptados a este contexto:</p>
+<ul>
+<li><strong>Canu</strong> y <strong>Flye</strong>: ensambladores especializados en lecturas largas.</li>
+<li><strong>ABruijn</strong>: adapta grafos de de Bruijn a lecturas largas con corrección de errores.</li>
+<li><strong>Etapas de pulido (<em>polishing</em>)</strong>: herramientas como <strong>Pilon</strong> o <strong>Racon</strong> corrigen errores posteriores al ensamblaje.</li>
+</ul>
+<hr />
+<h2 id="ejemplos-de-ensambladores-populares">Ejemplos de ensambladores populares</h2>
+<ul>
+<li><strong>Velvet</strong>: pionero en aplicar grafos de de Bruijn a lecturas cortas.</li>
+<li><strong>SPAdes</strong>: ampliamente utilizado, combina <em>multik-mers</em> y correcciones.</li>
+<li><strong>SOAPdenovo</strong>: orientado a genomas grandes.</li>
+<li><strong>Canu</strong>: referencia para lecturas largas.</li>
+<li><strong>Flye</strong>: eficiente para genomas microbianos y metagenomas con lecturas largas.</li>
+</ul>
+<hr />
+<h2 id="consideraciones-practicas-y-desafios-actuales">Consideraciones prácticas y desafíos actuales</h2>
+<ul>
+<li>Escalabilidad en genomas grandes y complejos.</li>
+<li>Manejo de regiones repetitivas largas (centrómeros, telómeros).</li>
+<li>Ensamblajes híbridos (lecturas cortas + largas).</li>
+<li>Desarrollo de grafos de <strong>pangenoma</strong>, que representan la variabilidad genética de poblaciones completas.</li>
+</ul>
+<hr />
+<h2 id="resumen">Resumen</h2>
+<ol>
+<li><strong>Greedy y OLC</strong> → métodos históricos, útiles para comprender los orígenes.</li>
+<li><strong>Grafos de de Bruijn</strong> → estándar para lecturas cortas (Illumina).</li>
+<li><strong>Variantes de de Bruijn</strong> → multik, dispersos, híbridos.</li>
+<li><strong>Lecturas largas (PacBio, Nanopore)</strong> → resurgen enfoques OLC adaptados.</li>
+<li><strong>Ensambladores actuales</strong> → SPAdes, Velvet, Canu, Flye, entre otros.</li>
+</ol>
+<p>Los algoritmos de ensamblaje son un área dinámica de la bioinformática, en constante evolución conforme aparecen nuevas tecnologías de secuenciación y aumentan las demandas de precisión y escala.</p>
 
 
 
