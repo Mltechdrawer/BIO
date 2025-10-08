@@ -12,7 +12,7 @@ Los primeros intentos de ensamblaje se basaron en estrategias *greedy*, que unen
 
 [Greedy Assembly](greedy_assembly.py)
 
-[Greedy diagrama](olc_walkthrough.md)
+[Greedy diagrama](greedy_walkthrough.md)
 
 
 ### Overlap–Layout–Consensus (OLC)

@@ -16,7 +16,7 @@
     
     
       
-        <title>Algoritmos de ensamblaje de secuencias - Bioinformática</title>
+        <title>Algoritmos de Secuenciación - Bioinformática</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#algoritmos-de-ensamblaje-de-secuencias" class="md-skip">
+        <a href="#algoritmos-de-secuenciacion" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Algoritmos de ensamblaje de secuencias
+              Algoritmos de Secuenciación
             
           </span>
         </div>
@@ -621,37 +621,19 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduccion" class="md-nav__link">
+  <a href="#algoritmos-de-ensamblaje-de-novo" class="md-nav__link">
     <span class="md-ellipsis">
-      Introducción
+      Algoritmos de ensamblaje de novo
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#algoritmos-clasicos-vision-historica" class="md-nav__link">
-    <span class="md-ellipsis">
-      Algoritmos clásicos (visión histórica)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Algoritmos clásicos (visión histórica)">
+    <nav class="md-nav" aria-label="Algoritmos de ensamblaje de novo">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#algoritmos-greedy-avaro" class="md-nav__link">
+  <a href="#grafos-de-de-bruijn" class="md-nav__link">
     <span class="md-ellipsis">
-      Algoritmos greedy (avaro)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#overlaplayoutconsensus-olc" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overlap–Layout–Consensus (OLC)
+      Grafos de De Bruijn
     </span>
   </a>
   
@@ -663,19 +645,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#grafos-de-de-bruijn-el-estandar-para-lecturas-cortas" class="md-nav__link">
+  <a href="#algoritmos-de-superposicion-consenso" class="md-nav__link">
     <span class="md-ellipsis">
-      Grafos de de Bruijn: el estándar para lecturas cortas
+      Algoritmos de superposición-consenso
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Grafos de de Bruijn: el estándar para lecturas cortas">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algoritmos-basados-en-referencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algoritmos basados en referencia
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Algoritmos basados en referencia">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#problemas-y-soluciones" class="md-nav__link">
+  <a href="#alineamiento-de-lecturas" class="md-nav__link">
     <span class="md-ellipsis">
-      Problemas y soluciones
+      Alineamiento de lecturas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deteccion-de-variantes-y-reensamblaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detección de variantes y reensamblaje
     </span>
   </a>
   
@@ -687,45 +687,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#variantes-y-mejoras-de-los-grafos-de-de-bruijn" class="md-nav__link">
+  <a href="#algoritmos-hibridos" class="md-nav__link">
     <span class="md-ellipsis">
-      Variantes y mejoras de los grafos de de Bruijn
+      Algoritmos híbridos
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ensamblaje-con-lecturas-largas" class="md-nav__link">
+  <a href="#algoritmos-de-correccion-de-errores" class="md-nav__link">
     <span class="md-ellipsis">
-      Ensamblaje con lecturas largas
+      Algoritmos de corrección de errores
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ejemplos-de-ensambladores-populares" class="md-nav__link">
+  <a href="#algoritmos-de-evaluacion-y-validacion" class="md-nav__link">
     <span class="md-ellipsis">
-      Ejemplos de ensambladores populares
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#consideraciones-practicas-y-desafios-actuales" class="md-nav__link">
-    <span class="md-ellipsis">
-      Consideraciones prácticas y desafíos actuales
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resumen" class="md-nav__link">
-    <span class="md-ellipsis">
-      Resumen
+      Algoritmos de evaluación y validación
     </span>
   </a>
   
@@ -747,80 +729,70 @@
 
 
 
-<h1 id="algoritmos-de-ensamblaje-de-secuencias">Algoritmos de ensamblaje de secuencias</h1>
-<h2 id="introduccion">Introducción</h2>
-<p>La secuenciación moderna no produce genomas completos de una sola lectura, sino millones de fragmentos que deben ser <strong>reconstruidos</strong> computacionalmente. Esta tarea, conocida como <strong>ensamblaje de secuencias</strong>, es uno de los grandes retos de la bioinformática: exige algoritmos eficientes, capaces de lidiar con errores, regiones repetitivas y grandes volúmenes de datos.</p>
+<h1 id="algoritmos-de-secuenciacion">Algoritmos de Secuenciación</h1>
+<p>La secuenciación del ADN y ARN es un proceso esencial en bioinformática. Existen diversos <strong>algoritmos</strong> que permiten ensamblar, alinear, corregir y validar secuencias genéticas. En este documento se resumen los principales enfoques y herramientas utilizadas actualmente.</p>
 <hr />
-<h2 id="algoritmos-clasicos-vision-historica">Algoritmos clásicos (visión histórica)</h2>
-<h3 id="algoritmos-greedy-avaro">Algoritmos <em>greedy</em> (avaro)</h3>
-<p>Los primeros intentos de ensamblaje se basaron en estrategias <em>greedy</em>, que unen secuencias siempre que se detecta un solapamiento suficientemente largo. Aunque sencillos, estos algoritmos eran muy sensibles a errores y repeticiones, lo que limitaba su utilidad en genomas reales.</p>
-<p><a href="../greedy_assembly.py">Greedy Assembly</a></p>
-<p><a href="../olc_walkthrough/">Greedy diagrama</a></p>
-<h3 id="overlaplayoutconsensus-olc">Overlap–Layout–Consensus (OLC)</h3>
-<p>El paradigma OLC fue dominante durante la era de la secuenciación de Sanger. Consta de tres pasos: (1) encontrar solapamientos entre lecturas, (2) construir un grafo de disposición (<em>layout</em>), y (3) generar una secuencia consenso. Funcionó bien para proyectos como el <strong>Proyecto Genoma Humano</strong>, pero resultó ineficiente con la explosión de datos de la secuenciación masiva.</p>
-<p><a href="../olc_assembly.py">Overlap Layout Consensus Assembly</a></p>
-<p><a href="../olc_walkthrough/">Overlap Layout Consensus diagrama</a></p>
-<hr />
-<h2 id="grafos-de-de-bruijn-el-estandar-para-lecturas-cortas">Grafos de de Bruijn: el estándar para lecturas cortas</h2>
-<p>Con la llegada de la <strong>secuenciación de nueva generación (NGS)</strong>, que produce millones de lecturas cortas (50–300 pb), los algoritmos OLC dejaron de ser viables. El gran salto lo dieron los <strong>grafos de de Bruijn</strong>:</p>
+<h2 id="algoritmos-de-ensamblaje-de-novo">Algoritmos de ensamblaje <em>de novo</em></h2>
+<p>Los algoritmos <em>de novo</em> ensamblan secuencias sin una referencia previa, reconstruyendo genomas completos a partir de fragmentos cortos.</p>
+<h3 id="grafos-de-de-bruijn">Grafos de De Bruijn</h3>
+<p>Uno de los enfoques más utilizados para el ensamblaje <em>de novo</em> es el <strong>grafo de De Bruijn</strong>, especialmente eficaz con secuencias cortas generadas por tecnologías NGS.<br />
+Los caminos dentro del grafo representan las posibles reconstrucciones de la secuencia original.</p>
+<p><strong>Ejemplos de programas:</strong></p>
 <ul>
-<li>Se fragmentan las lecturas en subcadenas de longitud <em>k</em> (<em>k-mers</em>).</li>
-<li>Cada <em>k-mer</em> es un nodo en el grafo.</li>
-<li>Los arcos representan solapamientos de <em>k-1</em> bases.</li>
-<li>El problema del ensamblaje se convierte en recorrer un camino euleriano que cubra todos los arcos.</li>
-</ul>
-<p>Este enfoque es mucho más eficiente en memoria y tiempo que OLC para grandes volúmenes de lecturas cortas.</p>
-<h3 id="problemas-y-soluciones">Problemas y soluciones</h3>
-<ul>
-<li><strong>Errores de secuenciación</strong> generan nodos espurios. → Se corrigen mediante algoritmos de limpieza (<em>error correction</em>).</li>
-<li><strong>Repeticiones</strong> crean bifurcaciones ambiguas. → Estrategias de simplificación del grafo (<em>tip removal</em>, <em>bubble popping</em>).</li>
-<li><strong>Selección del tamaño de <em>k</em></strong>: compromete resolución y conectividad.</li>
-</ul>
-<p><a href="../debruijn_assembly.py">DeBrujin Assembly</a></p>
-<p><a href="../debruijn_walkthrough/">Debrujin diagrama</a></p>
-<hr />
-<h2 id="variantes-y-mejoras-de-los-grafos-de-de-bruijn">Variantes y mejoras de los grafos de de Bruijn</h2>
-<ul>
-<li><strong>Multik-mers</strong>: uso de varios valores de <em>k</em> en paralelo (ej. SPAdes).</li>
-<li><strong>Grafos dispersos (sparse de Bruijn)</strong>: reducen drásticamente la memoria necesaria.</li>
-<li><strong>Omnitigs</strong> y extensiones teóricas: garantizan secuencias correctas bajo ciertas condiciones.</li>
-<li><strong>Ensambladores híbridos</strong>: combinan estrategias de de Bruijn con enfoques OLC o lecturas largas.</li>
+<li><strong>Velvet</strong> → pionero en el uso del grafo de De Bruijn para ensamblajes <em>de novo</em>. Muy eficiente con lecturas cortas.  </li>
+<li><strong>SPAdes (St. Petersburg genome assembler)</strong> → ideal para genomas bacterianos y metagenómicos.  </li>
+<li><strong>ABySS</strong> → apto tanto para genomas pequeños como grandes (por ejemplo, el genoma humano), diseñado para lecturas masivas de Illumina.</li>
 </ul>
 <hr />
-<h2 id="ensamblaje-con-lecturas-largas">Ensamblaje con lecturas largas</h2>
-<p>Las tecnologías <strong>PacBio</strong> y <strong>Oxford Nanopore</strong> generan lecturas largas (10–100 kb), muy útiles para resolver repeticiones, pero con tasas de error elevadas. Aquí resurgen los métodos tipo OLC y <em>string graphs</em>, adaptados a este contexto:</p>
+<h2 id="algoritmos-de-superposicion-consenso">Algoritmos de superposición-consenso</h2>
+<p>Estos algoritmos son adecuados para lecturas largas (como las de <strong>PacBio</strong> u <strong>Oxford Nanopore</strong>). Se basan en detectar superposiciones directas entre las lecturas.</p>
+<p><strong>Ejemplos de programas:</strong></p>
 <ul>
-<li><strong>Canu</strong> y <strong>Flye</strong>: ensambladores especializados en lecturas largas.</li>
-<li><strong>ABruijn</strong>: adapta grafos de de Bruijn a lecturas largas con corrección de errores.</li>
-<li><strong>Etapas de pulido (<em>polishing</em>)</strong>: herramientas como <strong>Pilon</strong> o <strong>Racon</strong> corrigen errores posteriores al ensamblaje.</li>
+<li><strong>Celera Assembler</strong> → empleado en el <em>Proyecto Genoma Humano</em>.  </li>
+<li><strong>Canu</strong> → evolución de Celera, optimizado para lecturas largas.</li>
 </ul>
 <hr />
-<h2 id="ejemplos-de-ensambladores-populares">Ejemplos de ensambladores populares</h2>
+<h2 id="algoritmos-basados-en-referencia">Algoritmos basados en referencia</h2>
+<p>Cuando se dispone de un genoma de referencia, las lecturas se alinean con él.</p>
+<h3 id="alineamiento-de-lecturas">Alineamiento de lecturas</h3>
+<p><strong>Herramientas principales:</strong></p>
 <ul>
-<li><strong>Velvet</strong>: pionero en aplicar grafos de de Bruijn a lecturas cortas.</li>
-<li><strong>SPAdes</strong>: ampliamente utilizado, combina <em>multik-mers</em> y correcciones.</li>
-<li><strong>SOAPdenovo</strong>: orientado a genomas grandes.</li>
-<li><strong>Canu</strong>: referencia para lecturas largas.</li>
-<li><strong>Flye</strong>: eficiente para genomas microbianos y metagenomas con lecturas largas.</li>
+<li><strong>BWA (Burrows–Wheeler Aligner)</strong> → ampliamente utilizado para lecturas cortas. Usa el índice Burrows–Wheeler para acelerar búsquedas.  </li>
+<li><strong>Bowtie2</strong> → rápido y eficiente en memoria; útil para lecturas cortas y medianas.  </li>
+<li><strong>Minimap2</strong> → diseñado para lecturas largas; rápido en el alineamiento de genomas completos.</li>
+</ul>
+<h3 id="deteccion-de-variantes-y-reensamblaje">Detección de variantes y reensamblaje</h3>
+<p>Algunos algoritmos no solo alinean, sino que también identifican <strong>variantes genéticas</strong> (mutaciones) o corrigen errores locales.</p>
+<p><strong>Herramientas destacadas:</strong></p>
+<ul>
+<li><strong>GATK (Genome Analysis Toolkit)</strong> → kit de herramientas muy popular para detectar variantes, recalibrar calidad y analizar alineamientos.  </li>
+<li><strong>FreeBayes</strong> → identifica variantes genéticas (SNPs e <em>indels</em>) mediante modelos probabilísticos.</li>
 </ul>
 <hr />
-<h2 id="consideraciones-practicas-y-desafios-actuales">Consideraciones prácticas y desafíos actuales</h2>
+<h2 id="algoritmos-hibridos">Algoritmos híbridos</h2>
+<p>Los métodos híbridos combinan enfoques de grafos de De Bruijn (para fragmentos cortos) y superposición-consenso (para lecturas largas), aprovechando las ventajas de ambos.</p>
+<p><strong>Ejemplos de ensambladores híbridos:</strong></p>
 <ul>
-<li>Escalabilidad en genomas grandes y complejos.</li>
-<li>Manejo de regiones repetitivas largas (centrómeros, telómeros).</li>
-<li>Ensamblajes híbridos (lecturas cortas + largas).</li>
-<li>Desarrollo de grafos de <strong>pangenoma</strong>, que representan la variabilidad genética de poblaciones completas.</li>
+<li><strong>MaSuRCA</strong> → combina secuencias cortas y largas para un ensamblaje más preciso.  </li>
+<li><strong>HGAP (Hierarchical Genome Assembly Process)</strong> → desarrollado por PacBio, usa múltiples estrategias para lecturas largas.</li>
 </ul>
 <hr />
-<h2 id="resumen">Resumen</h2>
-<ol>
-<li><strong>Greedy y OLC</strong> → métodos históricos, útiles para comprender los orígenes.</li>
-<li><strong>Grafos de de Bruijn</strong> → estándar para lecturas cortas (Illumina).</li>
-<li><strong>Variantes de de Bruijn</strong> → multik, dispersos, híbridos.</li>
-<li><strong>Lecturas largas (PacBio, Nanopore)</strong> → resurgen enfoques OLC adaptados.</li>
-<li><strong>Ensambladores actuales</strong> → SPAdes, Velvet, Canu, Flye, entre otros.</li>
-</ol>
-<p>Los algoritmos de ensamblaje son un área dinámica de la bioinformática, en constante evolución conforme aparecen nuevas tecnologías de secuenciación y aumentan las demandas de precisión y escala.</p>
+<h2 id="algoritmos-de-correccion-de-errores">Algoritmos de corrección de errores</h2>
+<p>Las lecturas pueden contener errores, por lo que algunos programas los corrigen antes del ensamblaje o alineamiento.</p>
+<p><strong>Herramientas destacadas:</strong></p>
+<ul>
+<li><strong>Pilon</strong> → mejora la calidad de ensamblajes corrigiendo bases, cerrando huecos y refinando la secuencia.  </li>
+<li><strong>Quiver</strong> → diseñado para secuencias PacBio; utiliza la información de calidad para corregir errores.</li>
+</ul>
+<hr />
+<h2 id="algoritmos-de-evaluacion-y-validacion">Algoritmos de evaluación y validación</h2>
+<p>Tras el ensamblaje o alineamiento, es necesario evaluar la calidad del resultado.</p>
+<p><strong>Principales herramientas:</strong></p>
+<ul>
+<li><strong>QUAST (Quality Assessment Tool for Genome Assemblies)</strong> → compara el ensamblaje con referencias conocidas o mide métricas independientes como el tamaño del ensamblaje y número de <em>contigs</em>.  </li>
+<li><strong>BUSCO (Benchmarking Universal Single-Copy Orthologs)</strong> → evalúa la integridad del ensamblaje mediante genes ortólogos conservados.</li>
+</ul>
+<hr />
 
 
 
