@@ -33,3 +33,5 @@ Los algoritmos de secuenciación son el puente entre los datos crudos obtenidos 
 
 [Algoritmos de secuenciación](02_algoritmos_secuenciacion.md)
 
+[Algoritmos de ensamblaje de secuencias](02_algoritmos_ensamblaje_secuencias.md)
+

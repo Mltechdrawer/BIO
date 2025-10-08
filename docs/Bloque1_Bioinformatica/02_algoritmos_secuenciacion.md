@@ -1,92 +1,90 @@
-# Algoritmos de ensamblaje de secuencias
+# Algoritmos de Secuenciación
 
-## Introducción
-La secuenciación moderna no produce genomas completos de una sola lectura, sino millones de fragmentos que deben ser **reconstruidos** computacionalmente. Esta tarea, conocida como **ensamblaje de secuencias**, es uno de los grandes retos de la bioinformática: exige algoritmos eficientes, capaces de lidiar con errores, regiones repetitivas y grandes volúmenes de datos.
-
----
-
-## Algoritmos clásicos (visión histórica)
-
-### Algoritmos *greedy* (avaro)
-Los primeros intentos de ensamblaje se basaron en estrategias *greedy*, que unen secuencias siempre que se detecta un solapamiento suficientemente largo. Aunque sencillos, estos algoritmos eran muy sensibles a errores y repeticiones, lo que limitaba su utilidad en genomas reales.
-
-[Greedy Assembly](greedy_assembly.py)
-
-[Greedy diagrama](olc_walkthrough.md)
-
-
-### Overlap–Layout–Consensus (OLC)
-El paradigma OLC fue dominante durante la era de la secuenciación de Sanger. Consta de tres pasos: (1) encontrar solapamientos entre lecturas, (2) construir un grafo de disposición (*layout*), y (3) generar una secuencia consenso. Funcionó bien para proyectos como el **Proyecto Genoma Humano**, pero resultó ineficiente con la explosión de datos de la secuenciación masiva.
-
-[Overlap Layout Consensus Assembly](olc_assembly.py)
-
-[Overlap Layout Consensus diagrama](olc_walkthrough.md)
+La secuenciación del ADN y ARN es un proceso esencial en bioinformática. Existen diversos **algoritmos** que permiten ensamblar, alinear, corregir y validar secuencias genéticas. En este documento se resumen los principales enfoques y herramientas utilizadas actualmente.
 
 ---
 
-## Grafos de de Bruijn: el estándar para lecturas cortas
+## Algoritmos de ensamblaje *de novo*
 
-Con la llegada de la **secuenciación de nueva generación (NGS)**, que produce millones de lecturas cortas (50–300 pb), los algoritmos OLC dejaron de ser viables. El gran salto lo dieron los **grafos de de Bruijn**:
+Los algoritmos *de novo* ensamblan secuencias sin una referencia previa, reconstruyendo genomas completos a partir de fragmentos cortos.
 
-- Se fragmentan las lecturas en subcadenas de longitud *k* (*k-mers*).
-- Cada *k-mer* es un nodo en el grafo.
-- Los arcos representan solapamientos de *k-1* bases.
-- El problema del ensamblaje se convierte en recorrer un camino euleriano que cubra todos los arcos.
+### Grafos de De Bruijn
 
-Este enfoque es mucho más eficiente en memoria y tiempo que OLC para grandes volúmenes de lecturas cortas.
+Uno de los enfoques más utilizados para el ensamblaje *de novo* es el **grafo de De Bruijn**, especialmente eficaz con secuencias cortas generadas por tecnologías NGS.  
+Los caminos dentro del grafo representan las posibles reconstrucciones de la secuencia original.
 
-### Problemas y soluciones
-- **Errores de secuenciación** generan nodos espurios. → Se corrigen mediante algoritmos de limpieza (*error correction*).
-- **Repeticiones** crean bifurcaciones ambiguas. → Estrategias de simplificación del grafo (*tip removal*, *bubble popping*).
-- **Selección del tamaño de *k***: compromete resolución y conectividad.
+**Ejemplos de programas:**
 
-[DeBrujin Assembly](debruijn_assembly.py)
-
-[Debrujin diagrama](debruijn_walkthrough.md)
+- **Velvet** → pionero en el uso del grafo de De Bruijn para ensamblajes *de novo*. Muy eficiente con lecturas cortas.  
+- **SPAdes (St. Petersburg genome assembler)** → ideal para genomas bacterianos y metagenómicos.  
+- **ABySS** → apto tanto para genomas pequeños como grandes (por ejemplo, el genoma humano), diseñado para lecturas masivas de Illumina.
 
 ---
 
-## Variantes y mejoras de los grafos de de Bruijn
+## Algoritmos de superposición-consenso
 
-- **Multik-mers**: uso de varios valores de *k* en paralelo (ej. SPAdes).
-- **Grafos dispersos (sparse de Bruijn)**: reducen drásticamente la memoria necesaria.
-- **Omnitigs** y extensiones teóricas: garantizan secuencias correctas bajo ciertas condiciones.
-- **Ensambladores híbridos**: combinan estrategias de de Bruijn con enfoques OLC o lecturas largas.
+Estos algoritmos son adecuados para lecturas largas (como las de **PacBio** u **Oxford Nanopore**). Se basan en detectar superposiciones directas entre las lecturas.
 
----
+**Ejemplos de programas:**
 
-## Ensamblaje con lecturas largas
-
-Las tecnologías **PacBio** y **Oxford Nanopore** generan lecturas largas (10–100 kb), muy útiles para resolver repeticiones, pero con tasas de error elevadas. Aquí resurgen los métodos tipo OLC y *string graphs*, adaptados a este contexto:
-
-- **Canu** y **Flye**: ensambladores especializados en lecturas largas.
-- **ABruijn**: adapta grafos de de Bruijn a lecturas largas con corrección de errores.
-- **Etapas de pulido (*polishing*)**: herramientas como **Pilon** o **Racon** corrigen errores posteriores al ensamblaje.
+- **Celera Assembler** → empleado en el *Proyecto Genoma Humano*.  
+- **Canu** → evolución de Celera, optimizado para lecturas largas.
 
 ---
 
-## Ejemplos de ensambladores populares
-- **Velvet**: pionero en aplicar grafos de de Bruijn a lecturas cortas.
-- **SPAdes**: ampliamente utilizado, combina *multik-mers* y correcciones.
-- **SOAPdenovo**: orientado a genomas grandes.
-- **Canu**: referencia para lecturas largas.
-- **Flye**: eficiente para genomas microbianos y metagenomas con lecturas largas.
+## Algoritmos basados en referencia
+
+Cuando se dispone de un genoma de referencia, las lecturas se alinean con él.
+
+### Alineamiento de lecturas
+
+**Herramientas principales:**
+
+- **BWA (Burrows–Wheeler Aligner)** → ampliamente utilizado para lecturas cortas. Usa el índice Burrows–Wheeler para acelerar búsquedas.  
+- **Bowtie2** → rápido y eficiente en memoria; útil para lecturas cortas y medianas.  
+- **Minimap2** → diseñado para lecturas largas; rápido en el alineamiento de genomas completos.
+
+### Detección de variantes y reensamblaje
+
+Algunos algoritmos no solo alinean, sino que también identifican **variantes genéticas** (mutaciones) o corrigen errores locales.
+
+**Herramientas destacadas:**
+
+- **GATK (Genome Analysis Toolkit)** → kit de herramientas muy popular para detectar variantes, recalibrar calidad y analizar alineamientos.  
+- **FreeBayes** → identifica variantes genéticas (SNPs e *indels*) mediante modelos probabilísticos.
 
 ---
 
-## Consideraciones prácticas y desafíos actuales
-- Escalabilidad en genomas grandes y complejos.
-- Manejo de regiones repetitivas largas (centrómeros, telómeros).
-- Ensamblajes híbridos (lecturas cortas + largas).
-- Desarrollo de grafos de **pangenoma**, que representan la variabilidad genética de poblaciones completas.
+## Algoritmos híbridos
+
+Los métodos híbridos combinan enfoques de grafos de De Bruijn (para fragmentos cortos) y superposición-consenso (para lecturas largas), aprovechando las ventajas de ambos.
+
+**Ejemplos de ensambladores híbridos:**
+
+- **MaSuRCA** → combina secuencias cortas y largas para un ensamblaje más preciso.  
+- **HGAP (Hierarchical Genome Assembly Process)** → desarrollado por PacBio, usa múltiples estrategias para lecturas largas.
 
 ---
 
-## Resumen
-1. **Greedy y OLC** → métodos históricos, útiles para comprender los orígenes.
-2. **Grafos de de Bruijn** → estándar para lecturas cortas (Illumina).
-3. **Variantes de de Bruijn** → multik, dispersos, híbridos.
-4. **Lecturas largas (PacBio, Nanopore)** → resurgen enfoques OLC adaptados.
-5. **Ensambladores actuales** → SPAdes, Velvet, Canu, Flye, entre otros.
+## Algoritmos de corrección de errores
 
-Los algoritmos de ensamblaje son un área dinámica de la bioinformática, en constante evolución conforme aparecen nuevas tecnologías de secuenciación y aumentan las demandas de precisión y escala.
+Las lecturas pueden contener errores, por lo que algunos programas los corrigen antes del ensamblaje o alineamiento.
+
+**Herramientas destacadas:**
+
+- **Pilon** → mejora la calidad de ensamblajes corrigiendo bases, cerrando huecos y refinando la secuencia.  
+- **Quiver** → diseñado para secuencias PacBio; utiliza la información de calidad para corregir errores.
+
+---
+
+## Algoritmos de evaluación y validación
+
+Tras el ensamblaje o alineamiento, es necesario evaluar la calidad del resultado.
+
+**Principales herramientas:**
+
+- **QUAST (Quality Assessment Tool for Genome Assemblies)** → compara el ensamblaje con referencias conocidas o mide métricas independientes como el tamaño del ensamblaje y número de *contigs*.  
+- **BUSCO (Benchmarking Universal Single-Copy Orthologs)** → evalúa la integridad del ensamblaje mediante genes ortólogos conservados.
+
+---
+
