@@ -14,6 +14,19 @@ Los primeros intentos de ensamblaje se basaron en estrategias *greedy*, que unen
 
 [Greedy diagrama](greedy_walkthrough.md)
 
+<details>
+  <summary>Ejemplo (Greedy)</summary>
+  <pre>
+reads = ["ATTAC", "TACGA", "CGAAT", "GAATT"]
+
+Paso: unir 'ATTAC' -> 'TACGA' (overlap=3); nuevo: 'ATTACGA'
+Paso: unir 'ATTACGA' -> 'CGAAT' (overlap=3); nuevo: 'ATTACGAAT'
+Paso: unir 'ATTACGAAT' -> 'GAATT' (overlap=3); nuevo: 'ATTACGAATT'
+
+Resultado final: ATTACGAATT
+  </pre>
+</details>
+---
 
 ### Overlap–Layout–Consensus (OLC)
 El paradigma OLC fue dominante durante la era de la secuenciación de Sanger. Consta de tres pasos: (1) encontrar solapamientos entre lecturas, (2) construir un grafo de disposición (*layout*), y (3) generar una secuencia consenso. Funcionó bien para proyectos como el **Proyecto Genoma Humano**, pero resultó ineficiente con la explosión de datos de la secuenciación masiva.
@@ -21,6 +34,34 @@ El paradigma OLC fue dominante durante la era de la secuenciación de Sanger. Co
 [Overlap Layout Consensus Assembly](olc_assembly.py)
 
 [Overlap Layout Consensus diagrama](olc_walkthrough.md)
+
+<details>
+  <summary>Ejemplo (OLC assembly)</summary>
+  <pre>
+reads = ["ATTAC", "TACGA", "CGAAT", "GAATT"]
+
+Fase 1 - Overlap:
+Se construye el grafo de solapamientos (longitud mínima k=2):
+ATTAC → TACGA (3)
+TACGA → CGAAT (3)
+CGAAT → GAATT (4)
+
+Fase 2 - Layout:
+Se seleccionan las aristas de mayor peso evitando ciclos.
+Orden final de lecturas:
+ - ATTAC
+ - TACGA
+ - CGAAT
+ - GAATT
+
+Fase 3 - Consensus:
+ATTAC + TACGA → ATTACGA
+ATTACGA + CGAAT → ATTACGAAT
+ATTACGAAT + GAATT → ATTACGAATT
+
+Resultado final: ATTACGAATT
+  </pre>
+</details>
 
 ---
 
@@ -43,6 +84,64 @@ Este enfoque es mucho más eficiente en memoria y tiempo que OLC para grandes vo
 [DeBrujin Assembly](debruijn_assembly.py)
 
 [Debrujin diagrama](debruijn_walkthrough.md)
+
+<details>
+  <summary>Ejemplo (De Bruijn assembly)</summary>
+  <pre>
+Lecturas:
+ATTAC, TACGA, CGAAT, GAATT
+
+k = 3
+
+1) Generación de k-mers (y aristas u→v con u = prefijo (k−1), v = sufijo (k−1)):
+
+ATTAC → ATT, TTA, TAC
+  ATT: AT → TT
+  TTA: TT → TA
+  TAC: TA → AC
+
+TACGA → TAC, ACG, CGA
+  TAC: TA → AC   (segunda vez)
+  ACG: AC → CG
+  CGA: CG → GA
+
+CGAAT → CGA, GAA, AAT
+  CGA: CG → GA   (segunda vez)
+  GAA: GA → AA
+  AAT: AA → AT
+
+GAATT → GAA, AAT, ATT
+  GAA: GA → AA   (segunda vez)
+  AAT: AA → AT   (segunda vez)
+  ATT: AT → TT   (segunda vez)
+
+Nodos (k−1-mers):
+AT, TT, TA, AC, CG, GA, AA
+
+Aristas (con multiplicidad):
+AT→TT (×2), TT→TA (×1), TA→AC (×2), AC→CG (×1),
+CG→GA (×2), GA→AA (×2), AA→AT (×2)
+
+2) Camino euleriano (recorre cada arista respetando multiplicidades):
+Un camino válido (entre varios posibles) es:
+AT → TT → TA → AC → CG → GA → AA → AT → TT
+
+3) Reconstrucción del contig desde el camino euleriano:
+- Comienza con el primer nodo: "AT"
+- Añade el último carácter de cada nodo sucesivo:
+
+AT → TT  : "AT"  + "T" = "ATT"
+TT → TA  : "ATT" + "A" = "ATTA"
+TA → AC  : "ATTA"+ "C" = "ATTAC"
+AC → CG  : "ATTAC"+ "G" = "ATTACG"
+CG → GA  : "ATTACG"+ "A" = "ATTACGA"
+GA → AA  : "ATTACGA"+ "A" = "ATTACGAA"
+AA → AT  : "ATTACGAA"+ "T" = "ATTACGAAT"
+AT → TT  : "ATTACGAAT"+ "T" = "ATTACGAATT"
+
+Contig final: ATTACGAATT
+  </pre>
+</details>
 
 ---
 
