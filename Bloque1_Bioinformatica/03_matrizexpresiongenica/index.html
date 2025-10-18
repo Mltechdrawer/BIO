@@ -16,7 +16,7 @@
     
     
       
-        <title>Overlap–Layout–Consensus (OLC): ejemplo didáctico - Bioinformática</title>
+        <title>Ejemplo de matriz de expresión génica - Bioinformática</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#overlaplayoutconsensus-olc-ejemplo-didactico" class="md-skip">
+        <a href="#ejemplo-de-matriz-de-expresion-genica" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overlap–Layout–Consensus (OLC): ejemplo didáctico
+              Ejemplo de matriz de expresión génica
             
           </span>
         </div>
@@ -621,27 +621,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-overlap-grafo-de-solapamientos" class="md-nav__link">
+  <a href="#ejemplo-de-matriz-de-expresion-valores-tpm" class="md-nav__link">
     <span class="md-ellipsis">
-      1) Overlap (grafo de solapamientos)
+      Ejemplo de matriz de expresión (valores TPM)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-layout-orden-de-lecturas" class="md-nav__link">
+  <a href="#interpretacion" class="md-nav__link">
     <span class="md-ellipsis">
-      2) Layout (orden de lecturas)
+      Interpretación
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-consensus-secuencia-final" class="md-nav__link">
+  <a href="#aplicaciones" class="md-nav__link">
     <span class="md-ellipsis">
-      3) Consensus (secuencia final)
+      Aplicaciones
     </span>
   </a>
   
@@ -663,23 +663,68 @@
 
 
 
-<h1 id="overlaplayoutconsensus-olc-ejemplo-didactico">Overlap–Layout–Consensus (OLC): ejemplo didáctico</h1>
-<p>Este ejemplo muestra el flujo <strong>Overlap → Layout → Consensus</strong> con cuatro lecturas de juguete y un umbral de solapamiento mínimo <code>k=2</code>.</p>
-<h2 id="1-overlap-grafo-de-solapamientos">1) Overlap (grafo de solapamientos)</h2>
-<p>Calculamos los solapamientos pares a pares y construimos un <strong>grafo dirigido</strong> donde cada nodo es una lectura y cada arista <code>a → b</code> está etiquetada con la longitud del solapamiento del final de <code>a</code> con el inicio de <code>b</code>.</p>
-<p><img alt="Grafo de solapamientos" src="../olc_overlap_graph.png" /></p>
-<blockquote>
-<p>En este ejemplo, las aristas con pesos más altos sugieren el orden natural de las lecturas.</p>
-</blockquote>
-<p>Solapamientos detectados: </p>
-<p>ATTAC → TACGA (3)<br />
-TACGA → CGAAT (3)<br />
-CGAAT → GAATT (4)<br />
-GAATT → ATTAC (3)</p>
-<h2 id="2-layout-orden-de-lecturas">2) Layout (orden de lecturas)</h2>
-<p>A partir del grafo, elegimos un <strong>camino razonable</strong> (aproximado) priorizando las aristas con mayor peso y evitando ciclos. En un OLC real, esta fase suele implicar <strong>string graphs</strong>, filtrado de transitividad y heurísticas más robustas.</p>
-<h2 id="3-consensus-secuencia-final">3) Consensus (secuencia final)</h2>
-<p>Fusionamos las lecturas en el orden del <em>layout</em> respetando los solapamientos para producir una <strong>secuencia consenso</strong>. En pipelines prácticos, se alinean las pilas de lecturas y se hace <em>polishing</em> (p.ej., <strong>Pilon</strong>, <strong>Racon</strong>).</p>
+<h1 id="ejemplo-de-matriz-de-expresion-genica">Ejemplo de matriz de expresión génica</h1>
+<p>Imagina que se han analizado <strong>cinco genes</strong> en <strong>tres muestras</strong> (por ejemplo, tres condiciones biológicas o tres pacientes).<br />
+Cada valor representa el nivel de expresión medido —podría ser en <strong>recuentos</strong>, <strong>FPKM</strong> o <strong>TPM</strong>, según el método de normalización.</p>
+<hr />
+<h2 id="ejemplo-de-matriz-de-expresion-valores-tpm">Ejemplo de matriz de expresión (valores TPM)</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Gen</strong></th>
+<th><strong>Muestra_1</strong></th>
+<th><strong>Muestra_2</strong></th>
+<th><strong>Muestra_3</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GeneA</strong></td>
+<td>12.4</td>
+<td>15.2</td>
+<td>9.8</td>
+</tr>
+<tr>
+<td><strong>GeneB</strong></td>
+<td>0.5</td>
+<td>0.8</td>
+<td>0.3</td>
+</tr>
+<tr>
+<td><strong>GeneC</strong></td>
+<td>48.9</td>
+<td>51.3</td>
+<td>62.7</td>
+</tr>
+<tr>
+<td><strong>GeneD</strong></td>
+<td>103.2</td>
+<td>98.6</td>
+<td>110.1</td>
+</tr>
+<tr>
+<td><strong>GeneE</strong></td>
+<td>7.1</td>
+<td>6.9</td>
+<td>8.2</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="interpretacion">Interpretación</h2>
+<ul>
+<li>Cada <strong>fila</strong> representa un gen (GeneA–GeneE).  </li>
+<li>Cada <strong>columna</strong> representa una muestra.  </li>
+<li>Los números son los <strong>niveles de expresión</strong> estimados.  </li>
+<li>Si, por ejemplo, <strong>GeneD</strong> tiene valores mucho más altos, significa que está <strong>altamente expresado</strong> en todas las muestras.  </li>
+<li>Si <strong>GeneC</strong> aumenta en la Muestra_3, podría indicar una <strong>respuesta diferencial</strong> en esa condición.</li>
+</ul>
+<hr />
+<h2 id="aplicaciones">Aplicaciones</h2>
+<p>Esta matriz es el <strong>punto de partida</strong> para análisis más avanzados, como:
+- Comparar expresión entre condiciones (expresión diferencial).<br />
+- Analizar correlaciones entre genes (coexpresión).<br />
+- Clasificar muestras o detectar patrones con PCA o clustering jerárquico.</p>
 
 
 
