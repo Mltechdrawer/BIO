@@ -228,3 +228,4 @@ Los modelos de **transcriptómica predictiva** integran machine learning para in
 
 La expresión génica conecta la información estática del genoma con la dinámica funcional de las células. La transcriptómica, apoyada en herramientas bioinformáticas, permite descifrar esa dinámica con una resolución sin precedentes. Comprender cómo y cuándo se expresan los genes es clave para avanzar en biología de sistemas, medicina personalizada y biotecnología.
 
+[CRISPR](03_crispr_cas.md "Clustered Regularly Interspaced Short Palindromic Repeats - Repeticiones palindrómicas cortas agrupadas y regularmente interespaciadas")
