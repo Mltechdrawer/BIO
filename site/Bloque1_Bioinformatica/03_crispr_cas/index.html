@@ -1,0 +1,856 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Francisco Mojica y el origen del sistema CRISPR-Cas - Bioinformática</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../styles/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#francisco-mojica-y-el-origen-del-sistema-crispr-cas" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Bioinformática" class="md-header__button md-logo" aria-label="Bioinformática" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bioinformática
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Francisco Mojica y el origen del sistema CRISPR-Cas
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Bioinformática" class="md-nav__button md-logo" aria-label="Bioinformática" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Bioinformática
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contenidos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contenidos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Bloque 1. Bioinformática
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Bloque 1. Bioinformática
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_adn_arn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ADN y ARN
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_secuenciacion_genoma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Secuenciación y Genoma
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_expresion_genica_transcriptomica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Expresión génica y transcriptómica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_proteomica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Proteómica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Bloque 2. Bases de datos genómicas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Bloque 2. Bases de datos genómicas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bloque2_BD_Genomicas/01_tipos_bd_primarias_secundarias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tipos y BD primarias/secundarias
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bloque2_BD_Genomicas/02_alineamiento_comparacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Alineamiento y comparación de secuencias
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bloque2_BD_Genomicas/03_analisis_filogeneticos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Análisis filogenéticos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Bloque 3. Bioinformática estructural
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Bloque 3. Bioinformática estructural
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bloque3_Bioinformatica_Estructural/01_estructuras_3d/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Estructuras 3D de macromoléculas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bloque3_Bioinformatica_Estructural/02_bases_datos_estructurales/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bases de datos estructurales
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bloque3_Bioinformatica_Estructural/03_prediccion_estructural/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Predicción estructural
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#biografia-corta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Biografía corta
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion-de-la-observacion-a-la-revolucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción: de la observación a la revolución
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#el-sistema-crispr-cas" class="md-nav__link">
+    <span class="md-ellipsis">
+      El sistema CRISPR-Cas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="El sistema CRISPR-Cas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estructura-del-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura del sistema
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funcionamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funcionamiento
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#de-mecanismo-bacteriano-a-herramienta-biotecnologica" class="md-nav__link">
+    <span class="md-ellipsis">
+      De mecanismo bacteriano a herramienta biotecnológica
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crispr-y-la-expresion-genica" class="md-nav__link">
+    <span class="md-ellipsis">
+      CRISPR y la expresión génica
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aplicaciones-actuales-y-futuras" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aplicaciones actuales y futuras
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#impacto-y-reconocimiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Impacto y reconocimiento
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusión
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="francisco-mojica-y-el-origen-del-sistema-crispr-cas">Francisco Mojica y el origen del sistema CRISPR-Cas</h1>
+<p><img alt="Francis Mojica" src="../B103/FrancisMojica.png" title="Francisco Juan Martínez Mojica" /></p>
+<h2 id="biografia-corta">Biografía corta</h2>
+<p>Francisco Juan Martínez Mojica (Elche, 1963) es un microbiólogo español reconocido por haber descubierto las <strong>secuencias CRISPR</strong> (<em>Clustered Regularly Interspaced Short Palindromic Repeats</em>) mientras estudiaba arqueas halófilas en las salinas de Santa Pola. Su observación, publicada en la década de 1990, reveló la existencia de repeticiones palindrómicas en el ADN que más tarde se entenderían como la base de un mecanismo inmunitario bacteriano frente a virus.</p>
+<p>La trascendencia de su trabajo fue inicialmente pasada por alto, pero años después se convirtió en el pilar sobre el que se desarrolló la herramienta <strong>CRISPR-Cas9</strong>, capaz de <strong>editar genes con precisión, eficiencia y bajo coste</strong>. Este avance marcó una nueva era en biología molecular, biotecnología y medicina.</p>
+<hr />
+<h2 id="introduccion-de-la-observacion-a-la-revolucion">Introducción: de la observación a la revolución</h2>
+<p>El descubrimiento del sistema <strong>CRISPR-Cas</strong> es un ejemplo fascinante de cómo una observación básica en microbiología puede transformar toda la biología moderna.<br />
+Durante la década de 1990, <strong>Francisco Mojica</strong>, microbiólogo en la Universidad de Alicante, estudiaba arqueas halófilas que vivían en condiciones extremas de salinidad.<br />
+En sus análisis identificó una serie de <strong>repeticiones palindrómicas cortas y regularmente espaciadas</strong> en el ADN de estos microorganismos, un patrón que no se había descrito antes.</p>
+<p>Intrigado por su función, Mojica propuso años más tarde que estas secuencias podían formar parte de un <strong>sistema inmunitario adaptativo</strong> en bacterias y arqueas, capaz de reconocer y defenderse frente a infecciones virales.<br />
+Aunque su hipótesis tardó en ser aceptada, sentó las bases para comprender uno de los mecanismos moleculares más ingeniosos de la naturaleza: un sistema capaz de <strong>almacenar información genética de virus y reutilizarla como defensa</strong>, principio que daría lugar a la tecnología de <strong>edición génica CRISPR-Cas</strong>.</p>
+<h2 id="el-sistema-crispr-cas">El sistema CRISPR-Cas</h2>
+<p>El sistema <strong>CRISPR-Cas</strong> funciona como un <strong>mecanismo inmunitario adaptativo</strong> en bacterias y arqueas, que les permite reconocer y destruir material genético extraño, como el de virus o plásmidos.<br />
+Está formado por dos componentes principales: las <strong>secuencias CRISPR</strong>, que almacenan fragmentos de ADN invasor, y las <strong>proteínas Cas</strong> (<em>CRISPR-associated</em>), que utilizan esa información para identificar y cortar el ADN invasor cuando vuelve a aparecer.</p>
+<h3 id="estructura-del-sistema">Estructura del sistema</h3>
+<ul>
+<li><strong>Región CRISPR:</strong> contiene repeticiones cortas de ADN separadas por espaciadores únicos. Cada espaciador proviene de un fragmento de ADN viral que la célula ha encontrado previamente, actuando como una “memoria genética” de infecciones pasadas.  </li>
+<li><strong>Genes Cas:</strong> codifican proteínas con funciones en la adquisición, procesamiento y destrucción de ADN extraño. Entre ellas, la más conocida es <strong>Cas9</strong>, una nucleasa capaz de cortar el ADN en posiciones específicas.</li>
+</ul>
+<h3 id="funcionamiento">Funcionamiento</h3>
+<p>El proceso natural del sistema CRISPR-Cas puede dividirse en tres fases:  </p>
+<ol>
+<li><strong>Adquisición:</strong> cuando la célula se enfrenta a un virus, incorpora fragmentos de su ADN como nuevos espaciadores en la región CRISPR.    </li>
+<li><strong>Expresión:</strong> las repeticiones y espaciadores se transcriben en moléculas de ARN (crRNA) que contienen la secuencia complementaria al ADN viral.    </li>
+<li><strong>Interferencia:</strong> el ARN guía (crRNA) forma un complejo con la proteína Cas, que reconoce el ADN invasor y lo corta, neutralizando la amenaza.  </li>
+</ol>
+<p>Este sistema proporciona una <strong>inmunidad adaptativa</strong> en organismos procariotas, análoga en concepto a la memoria inmunológica de los vertebrados, pero basada en información genética almacenada y reutilizada con precisión molecular.</p>
+<p><a href="../03_sia/" title="Sistema de Inmunidad Adaptativa">Sistema de Inmunidad Adaptativa</a></p>
+<h2 id="de-mecanismo-bacteriano-a-herramienta-biotecnologica">De mecanismo bacteriano a herramienta biotecnológica</h2>
+<p>El paso decisivo en la historia de <strong>CRISPR-Cas</strong> llegó cuando los científicos comprendieron que el mecanismo bacteriano podía <strong>reprogramarse</strong> para funcionar en cualquier organismo.<br />
+En 2012, los equipos de <strong>Jennifer Doudna</strong> y <strong>Emmanuelle Charpentier</strong> demostraron que era posible diseñar un <strong>ARN guía sintético (sgRNA)</strong> capaz de dirigir a la nucleasa <strong>Cas9</strong> hacia una secuencia específica de ADN.<br />
+Esta combinación permitía <strong>cortar el ADN en un punto exacto</strong> elegido por el investigador, abriendo la puerta a la <strong>edición genética precisa</strong>.</p>
+<p>La versatilidad de esta herramienta reside en su sencillez: basta con modificar la secuencia del ARN guía para dirigir Cas9 hacia un nuevo objetivo.<br />
+Una vez producido el corte en el ADN, las propias enzimas de reparación de la célula pueden introducir <strong>mutaciones controladas</strong>, <strong>eliminar fragmentos</strong> o <strong>insertar secuencias nuevas</strong>.<br />
+De este modo, CRISPR-Cas9 se convirtió en una herramienta <strong>universal, barata y eficaz</strong> para manipular el genoma de bacterias, plantas, animales e incluso células humanas.</p>
+<p>Este avance transformó la biología molecular en una disciplina <strong>no solo descriptiva, sino también de ingeniería genética</strong>, dando origen a una nueva era de la biotecnología moderna.</p>
+<h2 id="crispr-y-la-expresion-genica">CRISPR y la expresión génica</h2>
+<p>Además de servir como herramienta de edición del ADN, el sistema <strong>CRISPR-Cas</strong> se ha adaptado para estudiar y controlar la <strong>expresión génica</strong> sin necesidad de modificar la secuencia del genoma.<br />
+Cuando la proteína <strong>Cas9</strong> se modifica para perder su capacidad de corte —creando una versión inactiva llamada <strong>dCas9 (dead Cas9)</strong>—, esta puede dirigirse a regiones específicas del ADN mediante un ARN guía, actuando como un <strong>regulador de la transcripción</strong>.</p>
+<p>Según las moléculas que se acoplen a dCas9, el sistema puede:
+- <strong>Activar genes (CRISPRa)</strong>: uniendo factores que favorecen la transcripción, se estimula la expresión de un gen concreto.<br />
+- <strong>Reprimir genes (CRISPRi)</strong>: bloqueando el acceso de la ARN polimerasa o reclutando represores, se reduce o impide la transcripción.</p>
+<p>Estas variantes convierten a CRISPR en una <strong>herramienta de control fino de la expresión génica</strong>, con aplicaciones directas en transcriptómica funcional, biología sintética y estudios de regulación génica.<br />
+En esencia, permiten observar cómo cambia el comportamiento celular al encender o apagar genes específicos, proporcionando una visión experimental y dinámica de la red de expresión génica.</p>
+<h2 id="aplicaciones-actuales-y-futuras">Aplicaciones actuales y futuras</h2>
+<p>El sistema <strong>CRISPR-Cas</strong> ha revolucionado la investigación biomédica y biotecnológica gracias a su simplicidad, precisión y versatilidad.<br />
+Hoy en día, se utiliza en una amplia variedad de campos, desde la medicina hasta la agricultura y la biología sintética.</p>
+<p>En <strong>biomedicina</strong>, CRISPR se emplea para <strong>corregir mutaciones genéticas</strong> responsables de enfermedades hereditarias, desarrollar <strong>terapias génicas personalizadas</strong> y crear modelos celulares y animales que reproducen patologías humanas con gran fidelidad.<br />
+También se explora su uso en la <strong>inmunoterapia contra el cáncer</strong>, modificando linfocitos T para mejorar su capacidad de reconocimiento y destrucción de células tumorales.</p>
+<p>En <strong>biotecnología y agricultura</strong>, se aplica para <strong>optimizar cultivos</strong>, aumentar su resistencia a enfermedades o mejorar sus propiedades nutricionales sin introducir ADN de otras especies.<br />
+En el ámbito de la <strong>investigación básica</strong>, CRISPR permite estudiar la función de los genes mediante su activación o silenciamiento dirigido, acelerando la comprensión de las redes de regulación génica y los procesos celulares.</p>
+<p>A futuro, se espera que las nuevas generaciones de herramientas basadas en CRISPR —como <strong>Cas12, Cas13 o base editors</strong>— amplíen aún más su alcance, permitiendo editar ARN, corregir mutaciones puntuales sin cortar el ADN o realizar modificaciones reversibles y controladas en el tiempo.</p>
+<h2 id="impacto-y-reconocimiento">Impacto y reconocimiento</h2>
+<p>El descubrimiento del sistema <strong>CRISPR-Cas</strong> y su posterior desarrollo como herramienta de edición génica han tenido un impacto profundo en la biología moderna.<br />
+Gracias al trabajo pionero de <strong>Francisco Mojica</strong>, se comprendió que los microorganismos poseen un mecanismo de defensa programable basado en información genética, una idea que transformó la forma de entender la interacción entre virus y bacterias.</p>
+<p>Aunque su hallazgo fue inicialmente ignorado por la comunidad científica, con el tiempo se reconoció su importancia fundamental.<br />
+El trabajo de Mojica fue el punto de partida para los estudios que llevaron a <strong>Jennifer Doudna y Emmanuelle Charpentier</strong> a desarrollar la versión experimental de <strong>CRISPR-Cas9</strong>, por la que recibieron el <strong>Premio Nobel de Química en 2020</strong>.<br />
+El propio Mojica ha sido posteriormente galardonado con múltiples premios internacionales y es considerado el <strong>descubridor conceptual del sistema</strong>.</p>
+<p>Más allá del reconocimiento individual, CRISPR representa un ejemplo de cómo un descubrimiento básico puede trascender fronteras y convertirse en una <strong>herramienta universal</strong> con implicaciones éticas, médicas y tecnológicas.<br />
+Hoy, el legado de Mojica se refleja en cada laboratorio que utiliza CRISPR para <strong>entender, reparar o rediseñar</strong> el material genético de los seres vivos.</p>
+<h2 id="conclusion">Conclusión</h2>
+<p>El sistema <strong>CRISPR-Cas</strong> simboliza la unión entre el descubrimiento biológico fundamental y la aplicación tecnológica más transformadora de nuestro tiempo.<br />
+De un mecanismo natural de defensa microbiana surgió una herramienta que permite <strong>editar, regular y comprender la expresión génica</strong> con una precisión sin precedentes.<br />
+El trabajo de Francisco Mojica demuestra que la curiosidad científica y la observación rigurosa pueden abrir caminos que cambian la historia de la ciencia y la forma en que la humanidad interactúa con su propio genoma.</p>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
