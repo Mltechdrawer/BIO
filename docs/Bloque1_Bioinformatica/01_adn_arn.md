@@ -1,13 +1,13 @@
 # Tema 1 · ADN y ARN. Secuencias biológicas y modelos matemáticos
 
-## 1. Introducción
+## Introducción
 El estudio de los ácidos nucleicos —ADN y ARN— constituye la base de la bioinformática, ya que estos son los portadores y reguladores de la información genética. Comprender su estructura, función y representación matemática es fundamental para el análisis de secuencias biológicas y para el desarrollo de modelos predictivos en biología computacional.
 
 ![Origen](B101/01_mundo.png "Origen")
 
 ---
 
-## 2. El origen de la vida
+## El origen de la vida
 El origen de las moléculas biológicas ha sido objeto de múltiples hipótesis científicas. Entre las más relevantes se encuentran:
 
 - **Abiogénesis**: la vida surge a partir de materia inorgánica bajo condiciones específicas.
@@ -21,7 +21,7 @@ Estas teorías buscan explicar cómo se pasó de compuestos químicos sencillos 
 
 ---
 
-## 3. Moléculas y macromoléculas
+## Moléculas y macromoléculas
 La química de la vida se fundamenta en la combinación de moléculas simples para formar macromoléculas complejas.
 
 - **Moléculas pequeñas**: ejemplos como etanol (C₂H₅OH), glucosa (C₆H₁₂O₆) o ácido fosfórico (H₃PO₄).
@@ -43,7 +43,7 @@ La organización secuencial de nucleótidos es lo que constituye la “secuencia
 
 ---
 
-## 4. Descubrimiento de la estructura del ADN
+## Descubrimiento de la estructura del ADN
 El papel de **Rosalind Franklin**, con su célebre “Foto 51” obtenida por difracción de rayos X, fue esencial para determinar la estructura helicoidal del ADN. Este hallazgo permitió a **[Watson y Crick](01_descubrimiento_adn.md)** proponer el modelo de la **doble hélice**, que explica cómo se almacena y transmite la información genética.
 
 ![Rosalind Franklin](B101/01_rosalind.png "Rosalind Franklin")
@@ -56,15 +56,13 @@ El papel de **Rosalind Franklin**, con su célebre “Foto 51” obtenida por di
 
 ---
 
-## 5. Secuencias biológicas
+## Secuencias biológicas
 Una secuencia biológica es la disposición ordenada de nucleótidos en una cadena de ADN o ARN. Estas secuencias:
 - Codifican genes y elementos regulatorios.
 - Son comparables entre especies para identificar homología y evolución.
 - Se almacenan y analizan en bases de datos bioinformáticas.
 
 La bioinformática utiliza algoritmos y modelos matemáticos para alinear, comparar y predecir funciones a partir de secuencias.
-
-Cada organismo vivo tiene su propio conjunto de secuencias de ADN y ARN únicas. Estas secuencias son como un libro de instrucciones para la síntesis de proteínas y otras funciones celulares. Sin embargo, las secuencias biológicas también exhiben una sorprendente diversidad, incluso entre especies relacionadas. Esto ha llevado a un profundo interés en la identificación y comparación de secuencias genéticas.
 
 ![Secuencias biológicas](B101/01_adnarnsecbio.png "Secuencias biológicas")
 
@@ -74,7 +72,7 @@ Cada organismo vivo tiene su propio conjunto de secuencias de ADN y ARN únicas.
 
 ---
 
-## 6. Modelos matemáticos de secuencias
+## Modelos matemáticos de secuencias
 Los modelos matemáticos permiten formalizar y analizar las secuencias biológicas:
 
 - **Modelos probabilísticos**: como las **cadenas de Markov**, que describen la probabilidad de aparición de un nucleótido en función de sus vecinos.
@@ -103,7 +101,7 @@ La representación matemática abre la puerta a una comprensión más profunda d
 
 ---
 
-## 7. Conclusión
+## Conclusión
 El estudio del ADN y ARN, desde su origen hasta su modelado matemático, proporciona las herramientas conceptuales y prácticas necesarias para la bioinformática moderna. Este primer bloque sienta las bases para comprender cómo la información genética puede analizarse, representarse y predecirse con métodos computacionales.
 
 ---
