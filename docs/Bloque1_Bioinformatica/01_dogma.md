@@ -18,7 +18,7 @@ Este dogma explica cómo la información hereditaria se utiliza para construir l
 *Dogma Central de la Biología Molecular*
 
 <details>
-<summary>💡 Detalles</summary>
+<summary> Detalles</summary>
 <p>Las<strong> líneas continuas</strong> muestran el flujo clásico de información genética (el dogma original).</p>
 <p>Las<strong>líneas discontinuas</strong> muestran rutas especiales descubiertas posteriormente.</p>
 <p>Casos especiales</p>

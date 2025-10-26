@@ -670,6 +670,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Alineamiento de lecturas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#herramientas-principales-para-alineamiento-genomico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Herramientas principales para alineamiento genómico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#herramientas-especificas-para-alineamiento-transcriptomico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Herramientas específicas para alineamiento transcriptómico
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -678,6 +702,21 @@
       Detección de variantes y reensamblaje
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Detección de variantes y reensamblaje">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#herramientas-destacadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Herramientas destacadas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -753,20 +792,30 @@ Los caminos dentro del grafo representan las posibles reconstrucciones de la sec
 </ul>
 <hr />
 <h2 id="algoritmos-basados-en-referencia">Algoritmos basados en referencia</h2>
-<p>Cuando se dispone de un genoma de referencia, las lecturas se alinean con él.</p>
+<p>Cuando se dispone de un genoma o transcriptoma de referencia, las lecturas se alinean con él mediante algoritmos especializados que comparan las secuencias obtenidas con la secuencia conocida.<br />
+Estos algoritmos permiten detectar coincidencias, mutaciones o empalmes (<em>splicing</em>) y constituyen una parte esencial del análisis bioinformático posterior.</p>
+<hr />
 <h3 id="alineamiento-de-lecturas">Alineamiento de lecturas</h3>
-<p><strong>Herramientas principales:</strong></p>
+<h4 id="herramientas-principales-para-alineamiento-genomico">Herramientas principales para alineamiento genómico</h4>
 <ul>
 <li><strong>BWA (Burrows–Wheeler Aligner)</strong> → ampliamente utilizado para lecturas cortas. Usa el índice Burrows–Wheeler para acelerar búsquedas.  </li>
 <li><strong>Bowtie2</strong> → rápido y eficiente en memoria; útil para lecturas cortas y medianas.  </li>
-<li><strong>Minimap2</strong> → diseñado para lecturas largas; rápido en el alineamiento de genomas completos.</li>
+<li><strong>Minimap2</strong> → diseñado para lecturas largas; muy utilizado en el alineamiento de genomas completos y datos de secuenciación por Nanopore o PacBio.  </li>
 </ul>
+<h4 id="herramientas-especificas-para-alineamiento-transcriptomico">Herramientas específicas para alineamiento transcriptómico</h4>
+<p>A diferencia del alineamiento genómico, el <strong>alineamiento de transcriptomas (RNA-seq)</strong> requiere algoritmos capaces de gestionar <strong>uniones de empalme (splice junctions)</strong>, ya que los fragmentos de un ARN mensajero pueden proceder de <strong>exones separados por intrones</strong> en el genoma.  </p>
+<ul>
+<li><strong>HISAT2 (Hierarchical Indexing for Spliced Alignment of Transcripts)</strong> → optimizado para lecturas de RNA-seq; utiliza índices jerárquicos que permiten alinear de forma eficiente lecturas que cruzan intrones.  </li>
+<li><strong>STAR (Spliced Transcripts Alignment to a Reference)</strong> → extremadamente rápido y preciso en RNA-seq; requiere una mayor cantidad de memoria RAM, pero ofrece alineamientos muy exactos al detectar empalmes entre exones.  </li>
+</ul>
+<p>Estas herramientas permiten identificar isoformas génicas y cuantificar niveles de expresión, proporcionando una visión detallada del transcriptoma.</p>
+<hr />
 <h3 id="deteccion-de-variantes-y-reensamblaje">Detección de variantes y reensamblaje</h3>
-<p>Algunos algoritmos no solo alinean, sino que también identifican <strong>variantes genéticas</strong> (mutaciones) o corrigen errores locales.</p>
-<p><strong>Herramientas destacadas:</strong></p>
+<p>Algunos algoritmos no solo alinean, sino que también identifican <strong>variantes genéticas</strong> (mutaciones) o corrigen errores locales derivados del proceso de secuenciación.  </p>
+<h4 id="herramientas-destacadas">Herramientas destacadas</h4>
 <ul>
 <li><strong>GATK (Genome Analysis Toolkit)</strong> → kit de herramientas muy popular para detectar variantes, recalibrar calidad y analizar alineamientos.  </li>
-<li><strong>FreeBayes</strong> → identifica variantes genéticas (SNPs e <em>indels</em>) mediante modelos probabilísticos.</li>
+<li><strong>FreeBayes</strong> → identifica variantes genéticas (<em>SNPs</em> e <em>indels</em>) mediante modelos probabilísticos.  </li>
 </ul>
 <hr />
 <h2 id="algoritmos-hibridos">Algoritmos híbridos</h2>
