@@ -1252,12 +1252,30 @@ Los <strong>enhancers</strong> (potenciadores) son secuencias distales que aumen
 La regulación <strong>cis</strong> depende de elementos situados en la misma molécula de ADN, mientras que la <strong>trans</strong> involucra factores difusibles como proteínas o ARN.</p>
 <details>
 <summary> Detalles</summary>
-<p><strong> Regulación cis</strong> en el mismo lugar</p>
-<p>Son secuencias de ADN que regulan genes cercanos, normalmente situadas en la misma molécula de ADN que el gen que controlan.</p>
-<p>Actúan como interruptores locales</p>
-<p><strong> Regulación trans</strong> a distancia</p>
-<p>Son factores difusibles, casi siempre proteínas o ARN, que pueden moverse por la célula y actuar sobre múltiples genes (incluso en distintos cromosomas).</p>
-<p>Actúan como mensajeros globales</p>
+<p><strong> Regulación en cis</strong></p>
+<p>La regulación en cis se produce mediante la interacción directa de proteínas con el ADN, generalmente a través de factores de transcripción que reconocen secuencias específicas denominadas motivos cis-regulatorios.</p>
+<p>Estas interacciones pueden modificar el estado de la cromatina, por ejemplo, cuando los llamados factores de transcripción pioneros abren regiones cerradas del ADN, permitiendo la activación o represión de la expresión génica.</p>
+<p><strong> Regulación trans</strong></p>
+<p>Por su parte, la regulación en trans implica la acción de proteínas o complejos proteicos que no se unen directamente al ADN, sino que interactúan con los factores de transcripción u otros componentes ya asociados al ADN.</p>
+<p>Estas proteínas pueden actuar de forma local, modulando genes cercanos, o a distancia, favoreciendo la formación de bucles en la cromatina (loops) que acercan regiones reguladoras como los enhancers a los promotores de los genes que regulan, activando o reprimiendo la transcripción. </p>
+</details>
+<hr />
+<details>
+<summary> Detalles</summary>
+<p><strong> Regulación en cis</strong></p>
+<p>La regulación en cis se refiere a los elementos de ADN que controlan la expresión de genes localizados en la misma molécula de ADN.</p>
+<p>Estos elementos, como promotores, enhancers, silencers o insulators, contienen motivos específicos de reconocimiento a los que se unen factores de transcripción u otras proteínas reguladoras.</p>
+<p>Su función consiste en modular la accesibilidad de la cromatina y la actividad de la maquinaria transcripcional, permitiendo activar o reprimir la transcripción.</p>
+<p>Por ejemplo, los factores de transcripción pioneros pueden unirse a estos motivos cis incluso en regiones de cromatina cerrada, abriéndolas para facilitar la activación génica.</p>
+<p><strong> Regulación trans</strong></p>
+<p>La regulación en trans, en cambio, implica moléculas difusibles —como proteínas, ARN no codificantes o complejos multiproteicos— que actúan sobre elementos cis.</p>
+<p>Estas moléculas no están físicamente unidas al gen que regulan, sino que se sintetizan en otro lugar del genoma y luego se asocian a los elementos cis para ejercer su efecto.</p>
+<p>Los reguladores trans pueden formar complejos con los factores de transcripción o mediar interacciones tridimensionales de la cromatina, generando loops que acercan enhancers y promotores.</p>
+<p>De este modo, cooperan en la activación o represión de la expresión génica, ya sea de forma local o a distancia.</p>
+
+<p><strong>Cis</strong> → secuencias de ADN que regulan genes cercanos (no se mueven).</p>
+
+<p><strong>Trans</strong> → moléculas difusibles (proteínas o ARN) que reconocen y actúan sobre esas secuencias.</p>
 </details>
 
 <h3 id="fases-de-la-transcripcion">Fases de la transcripción</h3>
@@ -1350,7 +1368,7 @@ Cuanta más fluorescencia se detecta en un punto, mayor es la cantidad de ARN de
 <p><a href="../03_matrizexpresiongenica/" title="Matriz de Expresión Génica">Matriz de Expresión Génica</a></p>
 <details>
 <summary> Valores normalizados</summary>
-<p><strong>FPKM (Reads Per Kilobase of transcript, per Million mapped reads)</strong></p>
+<p><strong>RPKM (Reads Per Kilobase of transcript, per Million mapped reads)</strong></p>
 <p>Es la medida clásica para lecturas simples (single-end).
 Se calcula dividiendo el número de lecturas asignadas a un gen entre la longitud del gen (en kilobases) y el total de lecturas mapeadas (en millones).</p>
 <p>RPKM = (nº de lecturas / longitud del gen en kb) / (millones de lecturas totales).</p>
