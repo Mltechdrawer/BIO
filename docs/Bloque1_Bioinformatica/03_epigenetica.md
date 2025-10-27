@@ -8,6 +8,12 @@ En términos metafóricos, si el ADN es el texto, la epigenética es la puntuaci
 
 ---
 
+![Regulación Epigenética](B103/epigenetica.png "Regulación Epigenética")
+
+*Regulación Epigenética*
+
+---
+
 ## Fundamentos moleculares de la regulación epigenética  
 
 ### Metilación del ADN  
@@ -86,16 +92,18 @@ Algunos ejemplos relevantes:
 
 Estas combinaciones de marcas conforman el denominado **“código de histonas”**, que actúa como un sistema de señalización dinámico que puede ser leído por proteínas específicas para activar, mantener o reprimir la expresión génica.
 
+---
+
+![Modificaciones de Histionas](B103/modificacioneshistionas.png "Modificaciones de Histionas")
+
+*Resumen comparativo de las principales modificaciones de histionas*
+
+---
+
 ### microARNs (miRNAs) y control post-transcripcional  
 Los **microARNs (miRNAs)** son pequeñas moléculas de ARN no codificante (~22 nucleótidos) que se unen de forma complementaria a los **ARN mensajeros (mRNA)**.  
 Su acción impide la traducción del mRNA o promueve su degradación, modulando la **expresión génica post-transcripcional**.  
 Este mecanismo permite un control fino y reversible de la producción de proteínas, y es fundamental en procesos como el desarrollo, la diferenciación celular o la respuesta al estrés.  
-
----
-
-![Regulación Epigenética](B103/epigenetica.png "Regulación Epigenética")
-
-*Regulación Epigenética*
 
 ---
 
