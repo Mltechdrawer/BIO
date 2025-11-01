@@ -1,0 +1,1102 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Plegamiento de proteínas - Bioinformática</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../styles/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#plegamiento-de-proteinas" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Bioinformática" class="md-header__button md-logo" aria-label="Bioinformática" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bioinformática
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Plegamiento de proteínas
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Bioinformática" class="md-nav__button md-logo" aria-label="Bioinformática" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Bioinformática
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contenidos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contenidos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Bloque 1. Bioinformática
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Bloque 1. Bioinformática
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_adn_arn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ADN y ARN
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_secuenciacion_genoma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Secuenciación y Genoma
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_expresion_genica_transcriptomica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Expresión génica y transcriptómica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_proteomica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Proteómica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Bloque 2. Bases de datos genómicas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Bloque 2. Bases de datos genómicas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bloque2_BD_Genomicas/01_tipos_bd_primarias_secundarias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tipos y BD primarias/secundarias
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bloque2_BD_Genomicas/02_alineamiento_comparacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Alineamiento y comparación de secuencias
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bloque2_BD_Genomicas/03_analisis_filogeneticos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Análisis filogenéticos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Bloque 3. Bioinformática estructural
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Bloque 3. Bioinformática estructural
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bloque3_Bioinformatica_Estructural/01_estructuras_3d/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Estructuras 3D de macromoléculas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bloque3_Bioinformatica_Estructural/02_bases_datos_estructurales/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bases de datos estructurales
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bloque3_Bioinformatica_Estructural/03_prediccion_estructural/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Predicción estructural
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fundamentos-del-plegamiento-proteico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fundamentos del plegamiento proteico
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fundamentos del plegamiento proteico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fuerzas-que-dirigen-el-plegamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fuerzas que dirigen el plegamiento
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-modelo-del-embudo-de-energia" class="md-nav__link">
+    <span class="md-ellipsis">
+      El modelo del embudo de energía
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vias-y-modelos-de-plegamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vías y modelos de plegamiento
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vías y modelos de plegamiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modelo-jerarquico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modelo jerárquico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelo-de-nucleacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modelo de nucleación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dilema-de-levinthal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dilema de Levinthal
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chaperonas-moleculares" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chaperonas moleculares
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chaperonas moleculares">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos principales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mecanismo-de-accion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mecanismo de acción
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desnaturalizacion-y-replegamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desnaturalización y replegamiento
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Desnaturalización y replegamiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#desnaturalizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desnaturalización
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replegamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Replegamiento
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mal-plegamiento-y-enfermedades-conformacionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mal plegamiento y enfermedades conformacionales
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mal plegamiento y enfermedades conformacionales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-de-enfermedades-relacionadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplos de enfermedades relacionadas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prediccion-y-modelado-computacional-del-plegamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Predicción y modelado computacional del plegamiento
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Predicción y modelado computacional del plegamiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metodos-computacionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Métodos computacionales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluacion-de-la-calidad-estructural" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluación de la calidad estructural
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relevancia-bioinformatica-y-en-ciencia-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relevancia bioinformática y en ciencia de datos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Relevancia bioinformática y en ciencia de datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#areas-de-aplicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Áreas de aplicación
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo-practico-visualizacion-del-plegamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo práctico: visualización del plegamiento
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusiones
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="plegamiento-de-proteinas">Plegamiento de proteínas</h1>
+<p>El <strong>plegamiento de proteínas</strong> es el proceso mediante el cual una <strong>cadena lineal de aminoácidos</strong> (estructura primaria) adopta una <strong>conformación tridimensional específica y funcional</strong>.<br />
+Esta conformación final, denominada <strong>estructura nativa</strong>, es esencial para que la proteína realice su función biológica correctamente.<br />
+El estudio del plegamiento constituye una de las áreas más fascinantes de la biología molecular y la bioinformática, ya que conecta la <strong>secuencia</strong>, la <strong>estructura</strong> y la <strong>función</strong> de las proteínas.</p>
+<hr />
+<h2 id="introduccion">Introducción</h2>
+<p>Cada proteína recién sintetizada emerge del ribosoma como una <strong>cadena polipeptídica lineal</strong>.<br />
+Sin embargo, en milisegundos o segundos, esa cadena se <strong>autoensambla espontáneamente</strong> hasta alcanzar una estructura tridimensional altamente específica.<br />
+Este proceso depende de interacciones químicas internas y del entorno celular.  </p>
+<p>El plegamiento correcto es vital:<br />
+una proteína mal plegada puede <strong>perder su función</strong>, <strong>agregarse</strong> o incluso <strong>provocar enfermedades</strong>.<br />
+Por ello, las células poseen mecanismos especializados —las <strong>chaperonas moleculares</strong>— que supervisan y corrigen el plegamiento.</p>
+<hr />
+<h2 id="fundamentos-del-plegamiento-proteico">Fundamentos del plegamiento proteico</h2>
+<p>El plegamiento es un proceso <strong>termodinámico</strong> impulsado por la búsqueda del <strong>estado de menor energía libre (ΔG)</strong>.<br />
+La proteína explora múltiples conformaciones posibles hasta alcanzar su forma más estable, conocida como <strong>conformación nativa</strong>.</p>
+<h3 id="fuerzas-que-dirigen-el-plegamiento">Fuerzas que dirigen el plegamiento</h3>
+<ul>
+<li><strong>Interacciones hidrofóbicas:</strong> los aminoácidos no polares se agrupan en el interior, evitando el contacto con el agua.  </li>
+<li><strong>Puentes de hidrógeno:</strong> estabilizan las hélices alfa y láminas beta.  </li>
+<li><strong>Interacciones iónicas:</strong> entre grupos cargados positiva y negativamente.  </li>
+<li><strong>Fuerzas de Van der Waals:</strong> contribuyen al empaquetamiento fino del núcleo hidrofóbico.  </li>
+<li><strong>Puentes disulfuro:</strong> enlaces covalentes entre residuos de cisteína que refuerzan la estabilidad estructural.</li>
+</ul>
+<h3 id="el-modelo-del-embudo-de-energia">El modelo del embudo de energía</h3>
+<p>El <strong>modelo del embudo energético</strong> describe el proceso como una búsqueda guiada:<br />
+la proteína comienza en un estado de alta energía y desorden, y va descendiendo por el “embudo” hasta alcanzar el mínimo global de energía correspondiente a su estructura nativa.<br />
+Aunque existen miles de posibles conformaciones, las restricciones químicas y energéticas reducen drásticamente el espacio de búsqueda.</p>
+<hr />
+<h2 id="vias-y-modelos-de-plegamiento">Vías y modelos de plegamiento</h2>
+<h3 id="modelo-jerarquico">Modelo jerárquico</h3>
+<p>El plegamiento ocurre en etapas sucesivas:
+1. Formación de <strong>estructuras secundarias</strong> locales (hélices α, láminas β).<br />
+2. Asociación de estas estructuras en <strong>dominios</strong>.<br />
+3. Compactación global hacia la estructura terciaria.</p>
+<h3 id="modelo-de-nucleacion">Modelo de nucleación</h3>
+<p>Algunas regiones estables actúan como <strong>núcleos de plegamiento</strong>, atrayendo el resto de la cadena hacia la estructura final.</p>
+<h3 id="dilema-de-levinthal">Dilema de Levinthal</h3>
+<p>Cyrus Levinthal (1969) planteó que una proteína no puede probar todas las conformaciones posibles al azar:<br />
+si lo hiciera, tardaría más que la edad del universo en plegarse.<br />
+Esto demuestra que el plegamiento <strong>no es aleatorio</strong>, sino que sigue <strong>rutas energéticamente favorables</strong>.</p>
+<hr />
+<h2 id="chaperonas-moleculares">Chaperonas moleculares</h2>
+<p>Las <strong>chaperonas</strong> son proteínas que <strong>asisten el plegamiento de otras proteínas</strong> sin formar parte de su estructura final.<br />
+Evitan interacciones erróneas, agregación y desnaturalización.</p>
+<h3 id="tipos-principales">Tipos principales</h3>
+<ul>
+<li><strong>Hsp70 y Hsp90:</strong> reconocen regiones hidrofóbicas expuestas en proteínas parcialmente plegadas.  </li>
+<li><strong>Chaperoninas (GroEL/GroES):</strong> complejos cilíndricos que proporcionan un microambiente aislado para el plegamiento correcto.  </li>
+<li><strong>Pequeñas Hsps:</strong> actúan como “guardianes” frente al estrés térmico.</li>
+</ul>
+<h3 id="mecanismo-de-accion">Mecanismo de acción</h3>
+<p>Las chaperonas utilizan <strong>ATP</strong> para inducir cambios conformacionales que ayudan a las proteínas clientes a alcanzar su forma nativa.<br />
+Su función es crítica durante el estrés celular, cuando el calor o la oxidación pueden provocar mal plegamiento.</p>
+<hr />
+<h2 id="desnaturalizacion-y-replegamiento">Desnaturalización y replegamiento</h2>
+<h3 id="desnaturalizacion">Desnaturalización</h3>
+<p>Ocurre cuando una proteína pierde su estructura tridimensional sin romper los enlaces peptídicos de la secuencia.<br />
+Puede ser causada por:
+- Calor excesivo.<br />
+- pH extremo.<br />
+- Agentes químicos (urea, guanidina).<br />
+- Solventes orgánicos.</p>
+<p>El resultado es la <strong>pérdida de función biológica</strong>.</p>
+<h3 id="replegamiento">Replegamiento</h3>
+<p>En muchos casos, la desnaturalización es <strong>reversible</strong> si se restauran las condiciones originales.<br />
+El <strong>experimento clásico de Anfinsen (1973)</strong> con la <strong>ribonucleasa A</strong> demostró que toda la información necesaria para el plegamiento reside en la <strong>secuencia de aminoácidos</strong>, no en factores externos.</p>
+<hr />
+<h2 id="mal-plegamiento-y-enfermedades-conformacionales">Mal plegamiento y enfermedades conformacionales</h2>
+<p>Cuando el plegamiento falla, las proteínas pueden:
+- Permanecer <strong>no funcionales</strong>.<br />
+- Formar <strong>agregados insolubles</strong>.<br />
+- Generar <strong>fibrillas amiloides</strong> tóxicas para las células.</p>
+<h3 id="ejemplos-de-enfermedades-relacionadas">Ejemplos de enfermedades relacionadas</h3>
+<table>
+<thead>
+<tr>
+<th>Enfermedad</th>
+<th>Proteína afectada</th>
+<th>Consecuencia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Alzheimer</strong></td>
+<td>β-amiloide y tau</td>
+<td>Formación de placas y ovillos neurofibrilares</td>
+</tr>
+<tr>
+<td><strong>Parkinson</strong></td>
+<td>α-sinucleína</td>
+<td>Agregados citoplasmáticos (cuerpos de Lewy)</td>
+</tr>
+<tr>
+<td><strong>Prionopatías</strong></td>
+<td>PrP</td>
+<td>Conversión de conformación normal a patológica</td>
+</tr>
+<tr>
+<td><strong>Fibrosis quística</strong></td>
+<td>CFTR</td>
+<td>Mal plegamiento y degradación prematura de la proteína</td>
+</tr>
+</tbody>
+</table>
+<p>Las células disponen de sistemas de control de calidad como el <strong>sistema ubiquitina-proteasoma</strong> o la <strong>autofagia</strong> para eliminar proteínas mal plegadas.</p>
+<hr />
+<h2 id="prediccion-y-modelado-computacional-del-plegamiento">Predicción y modelado computacional del plegamiento</h2>
+<p>El <strong>problema del plegamiento de proteínas</strong> ha sido uno de los mayores retos de la bioinformática estructural.</p>
+<h3 id="metodos-computacionales">Métodos computacionales</h3>
+<ol>
+<li><strong>Modelado por homología:</strong> predice la estructura basándose en proteínas con secuencias similares conocidas (SWISS-MODEL, MODELLER).  </li>
+<li><strong>Métodos <em>ab initio</em>:</strong> simulan el plegamiento desde cero, sin plantilla (Rosetta, QUARK).  </li>
+<li><strong>Dinámica molecular (MD):</strong> analiza el movimiento atómico en escalas temporales (GROMACS, NAMD).  </li>
+<li><strong>AlphaFold (DeepMind, 2021):</strong> red neuronal profunda que predice estructuras con precisión experimental.  </li>
+</ol>
+<h3 id="evaluacion-de-la-calidad-estructural">Evaluación de la calidad estructural</h3>
+<ul>
+<li><strong>RMSD (Root Mean Square Deviation)</strong> → mide la desviación promedio entre estructuras.  </li>
+<li><strong>TM-score</strong> → evalúa la similitud global de la topología.  </li>
+<li><strong>pLDDT (AlphaFold)</strong> → indica la confianza en cada región de la predicción.</li>
+</ul>
+<hr />
+<h2 id="relevancia-bioinformatica-y-en-ciencia-de-datos">Relevancia bioinformática y en ciencia de datos</h2>
+<p>El plegamiento proteico se ha convertido en un <strong>problema computacional de alto impacto</strong>.<br />
+La aplicación de modelos de <strong>machine learning</strong> ha revolucionado el campo.</p>
+<h3 id="areas-de-aplicacion">Áreas de aplicación</h3>
+<ul>
+<li><strong>Predicción de estabilidad</strong> ante mutaciones (DeepDDG, FoldX).  </li>
+<li><strong>Identificación de sitios activos o de unión a ligandos.</strong>  </li>
+<li><strong>Análisis de redes de contacto</strong> y dinámicas de plegamiento mediante grafos.  </li>
+<li><strong>Diseño de proteínas (protein design)</strong> → ingeniería de nuevas funciones o estructuras artificiales.</li>
+</ul>
+<p>Los avances en IA, aprendizaje profundo y GPUs han hecho posible modelar <strong>millones de proteínas</strong> con un nivel de detalle antes inimaginable.</p>
+<hr />
+<h2 id="ejemplo-practico-visualizacion-del-plegamiento">Ejemplo práctico: visualización del plegamiento</h2>
+<p><strong>Objetivo:</strong> observar cómo una proteína adquiere su estructura tridimensional.  </p>
+<ol>
+<li>Accede al <strong>Protein Data Bank (PDB):</strong> <a href="https://www.rcsb.org">https://www.rcsb.org</a>  </li>
+<li>Busca la estructura <strong>ribonucleasa A (PDB: 7RSA)</strong>.  </li>
+<li>Descarga el archivo <code>.pdb</code> y ábrelo con <strong>UCSF ChimeraX</strong> o <strong>Mol*</strong>.  </li>
+<li>Identifica:</li>
+<li>Hélices alfa y láminas beta.  </li>
+<li>Regiones hidrofóbicas internas.  </li>
+<li>Puentes disulfuro.  </li>
+<li>Opcional: compara la estructura experimental con la predicha por <strong>AlphaFold</strong>.</li>
+</ol>
+<p><strong>Reflexión:</strong> ¿qué diferencias observas entre la estructura teórica y la experimental?<br />
+¿Cómo se refleja la estabilidad en la disposición del núcleo hidrofóbico?</p>
+<hr />
+<h2 id="conclusiones">Conclusiones</h2>
+<ul>
+<li>El <strong>plegamiento proteico</strong> traduce la información genética en estructura funcional.  </li>
+<li>La secuencia de aminoácidos <strong>contiene toda la información necesaria</strong> para el plegamiento correcto.  </li>
+<li>Las <strong>chaperonas</strong> y mecanismos de control celular aseguran la estabilidad del proteoma.  </li>
+<li>Los fallos en este proceso se asocian a <strong>enfermedades neurodegenerativas</strong> y a pérdida funcional.  </li>
+<li>La <strong>bioinformática estructural</strong> y la <strong>inteligencia artificial</strong> han permitido modelar el plegamiento con una precisión sin precedentes.</li>
+</ul>
+<p><a href="../01_alphafold/" title="AlphaFold">AlphaFold</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
