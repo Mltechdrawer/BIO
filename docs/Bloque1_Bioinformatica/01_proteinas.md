@@ -64,6 +64,13 @@ La estructura de una proteína es jerárquica y se organiza en cuatro niveles:
 3. **Estructura terciaria:** la conformación tridimensional completa de la proteína, determinada por interacciones químicas entre los aminoácidos.  
 4. **Estructura cuaternaria:** el ensamblaje de varias cadenas polipeptídicas en una proteína funcional.
 
+![Hélices Alfa](B101/helices-alfa.png)
+
+*Hélices Alfa* Fuente: wikipedia
+
+![Láminas Beta](B101/lamina-beta.png)
+
+*Láminas Beta* Fuente: wikipedia
 
 ![EStructura de las proteínas](B101/pestructura.png)
 
