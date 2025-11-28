@@ -1,0 +1,1033 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Tipos de datos, secuencias, anotaciones y estructuras en bases de datos genómicas - Bioinformática</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../styles/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tipos-de-datos-secuencias-anotaciones-y-estructuras-en-bases-de-datos-genomicas" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Bioinformática" class="md-header__button md-logo" aria-label="Bioinformática" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bioinformática
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tipos de datos, secuencias, anotaciones y estructuras en bases de datos genómicas
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Bioinformática" class="md-nav__button md-logo" aria-label="Bioinformática" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Bioinformática
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contenidos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contenidos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Bloque 1. Bioinformática
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Bloque 1. Bioinformática
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bloque1_Bioinformatica/01_adn_arn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ADN y ARN
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bloque1_Bioinformatica/02_secuenciacion_genoma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Secuenciación y Genoma
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bloque1_Bioinformatica/03_expresion_genica_transcriptomica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Expresión génica y transcriptómica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bloque1_Bioinformatica/04_proteomica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Proteómica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Bloque 2. Bases de datos genómicas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Bloque 2. Bases de datos genómicas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_tipos_bd_primarias_secundarias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tipos y BD primarias/secundarias
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_alineamiento_comparacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Alineamiento y comparación de secuencias
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_analisis_filogeneticos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Análisis filogenéticos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Bloque 3. Bioinformática estructural
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Bloque 3. Bioinformática estructural
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bloque3_Bioinformatica_Estructural/01_estructuras_3d/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Estructuras 3D de macromoléculas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bloque3_Bioinformatica_Estructural/02_bases_datos_estructurales/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bases de datos estructurales
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bloque3_Bioinformatica_Estructural/03_prediccion_estructural/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Predicción estructural
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de datos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#secuencias-de-acidos-nucleicos-adn-arn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secuencias de ácidos nucleicos (ADN / ARN)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anotaciones-funcionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anotaciones funcionales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variaciones-geneticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variaciones genéticas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datos-de-expresion-genica-o-epigenetica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Datos de expresión génica o epigenética
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadatos-de-muestras-y-experimentos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metadatos de muestras y experimentos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#genomas-de-referencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Genomas de referencia
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relaciones-evolutivas-comparativas-y-filogeneticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relaciones evolutivas, comparativas y filogenéticas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-secuencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de secuencias
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de secuencias">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#secuencias-de-adn-genomico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secuencias de ADN genómico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secuencias-de-genes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secuencias de genes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secuencias-de-transcritos-mrna-lncrna-microrna" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secuencias de transcritos (mRNA, lncRNA, microRNA)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secuencias-de-proteinas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secuencias de proteínas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lecturas-crudas-de-secuenciacion-raw-reads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lecturas crudas de secuenciación (raw reads)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secuencias-ensambladas-contigs-scaffolds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secuencias ensambladas (contigs, scaffolds)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-anotaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de anotaciones
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de anotaciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anotaciones-funcionales_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anotaciones funcionales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anotaciones-estructurales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anotaciones estructurales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anotaciones-regulatorias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anotaciones regulatorias
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anotaciones-comparativas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anotaciones comparativas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anotaciones-experimentales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anotaciones experimentales
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-estructuras" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de estructuras
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de estructuras">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estructuras-de-proteinas-terciarias-y-cuaternarias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructuras de proteínas (terciarias y cuaternarias)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estructuras-de-arn-secundarias-y-terciarias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructuras de ARN (secundarias y terciarias)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#organizacion-de-la-cromatina" class="md-nav__link">
+    <span class="md-ellipsis">
+      Organización de la cromatina
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arquitectura-3d-del-genoma" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arquitectura 3D del genoma
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="tipos-de-datos-secuencias-anotaciones-y-estructuras-en-bases-de-datos-genomicas">Tipos de datos, secuencias, anotaciones y estructuras en bases de datos genómicas</h1>
+<h2 id="tipos-de-datos">Tipos de datos</h2>
+<h3 id="secuencias-de-acidos-nucleicos-adn-arn">Secuencias de ácidos nucleicos (ADN / ARN)</h3>
+<p>Incluyen secuencias de genes, cromosomas y genomas completos, así como
+transcritos de ARN utilizados para estudiar expresión génica y
+transcriptomas.</p>
+<h3 id="anotaciones-funcionales">Anotaciones funcionales</h3>
+<p>Información que describe la función de los genes y proteínas, su papel
+en procesos biológicos, y elementos reguladores como promotores o
+enhancers.</p>
+<h3 id="variaciones-geneticas">Variaciones genéticas</h3>
+<p>Incluyen SNPs, inserciones, deleciones y variantes estructurales,
+permitiendo identificar diferencias respecto al genoma de referencia.</p>
+<h3 id="datos-de-expresion-genica-o-epigenetica">Datos de expresión génica o epigenética</h3>
+<p>Contienen niveles de expresión de ARN en distintos tejidos y
+condiciones, así como datos de metilación y otros marcadores
+epigenéticos.</p>
+<h3 id="metadatos-de-muestras-y-experimentos">Metadatos de muestras y experimentos</h3>
+<p>Información contextual como especie, tejido, condiciones de obtención, y
+detalles técnicos sobre el tipo de secuenciación o experimento
+realizado.</p>
+<h3 id="genomas-de-referencia">Genomas de referencia</h3>
+<p>Genomas modelo completos para cada especie, usados en ensamblaje,
+anotación y comparación de otros genomas.</p>
+<h3 id="relaciones-evolutivas-comparativas-y-filogeneticas">Relaciones evolutivas, comparativas y filogenéticas</h3>
+<p>Incluyen conjuntos de secuencias de múltiples organismos para análisis
+comparativos, alineamientos y reconstrucción de árboles filogenéticos.</p>
+<hr />
+<h2 id="tipos-de-secuencias">Tipos de secuencias</h2>
+<h3 id="secuencias-de-adn-genomico">Secuencias de ADN genómico</h3>
+<p>Incluyen el ADN completo de un organismo, abarcando regiones
+codificantes y no codificantes, permitiendo estudiar la organización
+global del genoma.</p>
+<h3 id="secuencias-de-genes">Secuencias de genes</h3>
+<p>Corresponden a regiones específicas del ADN que codifican proteínas o
+ARN funcionales, normalmente compuestas por exones e intrones.</p>
+<h3 id="secuencias-de-transcritos-mrna-lncrna-microrna">Secuencias de transcritos (mRNA, lncRNA, microRNA)</h3>
+<p>Representan moléculas de ARN derivadas de la transcripción del ADN, que
+reflejan qué genes están activos en un momento o tejido concreto.</p>
+<h3 id="secuencias-de-proteinas">Secuencias de proteínas</h3>
+<p>Son cadenas de aminoácidos derivadas de la traducción del ARNm y
+permiten analizar función, estructura y dominios proteicos.</p>
+<h3 id="lecturas-crudas-de-secuenciacion-raw-reads">Lecturas crudas de secuenciación (raw reads)</h3>
+<p>Fragmentos cortos o largos generados directamente por plataformas de
+secuenciación, usados como punto de partida para el análisis genómico.</p>
+<h3 id="secuencias-ensambladas-contigs-scaffolds">Secuencias ensambladas (contigs, scaffolds)</h3>
+<p>Secuencias largas reconstruidas uniendo lecturas crudas, que representan
+regiones continuas del genoma en distintos grados de completitud.</p>
+<hr />
+<h2 id="tipos-de-anotaciones">Tipos de anotaciones</h2>
+<h3 id="anotaciones-funcionales_1">Anotaciones funcionales</h3>
+<p>Describen la función biológica de genes, proteínas y transcritos,
+incluyendo procesos celulares, rutas metabólicas y roles moleculares.</p>
+<h3 id="anotaciones-estructurales">Anotaciones estructurales</h3>
+<p>Identifican los componentes de un gen, como exones, intrones, UTRs y
+regiones codificantes, definiendo la arquitectura de los elementos del
+genoma.</p>
+<h3 id="anotaciones-regulatorias">Anotaciones regulatorias</h3>
+<p>Detallan elementos que controlan la expresión génica, como promotores,
+enhancers, silenciadores y sitios de unión a factores de transcripción.</p>
+<h3 id="anotaciones-comparativas">Anotaciones comparativas</h3>
+<p>Relacionan genes y secuencias entre especies, identificando ortólogos y
+parálogos para estudios evolutivos y de conservación funcional.</p>
+<h3 id="anotaciones-experimentales">Anotaciones experimentales</h3>
+<p>Incluyen datos derivados de estudios como expresión génica, metilación,
+accesibilidad cromatínica o interacción proteína-ADN.</p>
+<hr />
+<h2 id="tipos-de-estructuras">Tipos de estructuras</h2>
+<h3 id="estructuras-de-proteinas-terciarias-y-cuaternarias">Estructuras de proteínas (terciarias y cuaternarias)</h3>
+<p>Describen la disposición tridimensional de una proteína o complejo
+proteico, clave para comprender su función y mecanismos de acción.</p>
+<h3 id="estructuras-de-arn-secundarias-y-terciarias">Estructuras de ARN (secundarias y terciarias)</h3>
+<p>Representan la forma plegada del ARN, con elementos como horquillas o
+bucles, esenciales para su estabilidad y función reguladora.</p>
+<h3 id="organizacion-de-la-cromatina">Organización de la cromatina</h3>
+<p>Detalla cómo el ADN se empaqueta en nucleosomas y niveles superiores de
+compactación, influyendo en accesibilidad y regulación génica.</p>
+<h3 id="arquitectura-3d-del-genoma">Arquitectura 3D del genoma</h3>
+<p>Describe la disposición espacial de regiones del ADN dentro del núcleo,
+incluyendo dominios topológicos que afectan la interacción entre genes y
+reguladores.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
