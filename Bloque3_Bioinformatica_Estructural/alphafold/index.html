@@ -1,0 +1,934 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>¿Hasta qué punto podemos confiar en AlphaFold? - Bioinformática - Grado en Ciencia e Ingeniería de Datos</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../styles/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#hasta-que-punto-podemos-confiar-en-alphafold" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Bioinformática - Grado en Ciencia e Ingeniería de Datos" class="md-header__button md-logo" aria-label="Bioinformática - Grado en Ciencia e Ingeniería de Datos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bioinformática - Grado en Ciencia e Ingeniería de Datos
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ¿Hasta qué punto podemos confiar en AlphaFold?
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Bioinformática - Grado en Ciencia e Ingeniería de Datos" class="md-nav__button md-logo" aria-label="Bioinformática - Grado en Ciencia e Ingeniería de Datos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Bioinformática - Grado en Ciencia e Ingeniería de Datos
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contenidos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contenidos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Bloque 1. Bioinformática
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Bloque 1. Bioinformática
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bloque1_Bioinformatica/01_adn_arn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ADN y ARN
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bloque1_Bioinformatica/02_secuenciacion_genoma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Secuenciación y Genoma
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bloque1_Bioinformatica/03_expresion_genica_transcriptomica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Expresión génica y transcriptómica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bloque1_Bioinformatica/04_proteomica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Proteómica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Bloque 2. Bases de datos genómicas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Bloque 2. Bases de datos genómicas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bloque2_BD_Genomicas/01_tipos_bd_primarias_secundarias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tipos y BD primarias/secundarias
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bloque2_BD_Genomicas/02_alineamiento_comparacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Alineamiento y comparación de secuencias
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bloque2_BD_Genomicas/03_analisis_filogeneticos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Análisis filogenéticos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Bloque 3. Bioinformática estructural
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Bloque 3. Bioinformática estructural
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_estructuras_3d/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Estructuras 3D de macromoléculas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_bases_datos_estructurales/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bases de datos estructurales
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_prediccion_estructural/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Predicción estructural
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduccion-y-reto" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Introducción y reto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-objetivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Objetivos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-herramientas-y-recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Herramientas y recursos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-casos-de-estudio" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Casos de estudio
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-desarrollo-de-la-practica" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Desarrollo de la práctica
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Desarrollo de la práctica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fase-1-exploracion-biologica-y-estructural" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fase 1. Exploración biológica y estructural
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fase-2-adquisicion-y-procesamiento-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fase 2. Adquisición y procesamiento de datos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fase-3-analisis-computacional-de-plddt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fase 3. Análisis computacional de pLDDT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fase-4-analisis-matricial-de-pae" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fase 4. Análisis matricial de PAE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fase-5-integracion-conclusiones-y-puesta-en-comun" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fase 5. Integración, conclusiones y puesta en común
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-entrega" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Entrega
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-ampliacion-voluntaria" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Ampliación voluntaria
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="hasta-que-punto-podemos-confiar-en-alphafold">¿Hasta qué punto podemos confiar en AlphaFold?</h1>
+<p><em>Análisis computacional de estructuras proteicas y evaluación de la incertidumbre de las predicciones</em></p>
+<p><strong>Bioinformática · Grado en Ciencia e Ingeniería de Datos · 4.º curso</strong><br />
+<strong>Duración:</strong> 120 minutos · <strong>Modalidad:</strong> parejas o grupos pequeños</p>
+<h2 id="1-introduccion-y-reto">1. Introducción y reto</h2>
+<p>AlphaFold permite predecir estructuras tridimensionales de proteínas a partir de su secuencia. Además de las coordenadas atómicas, proporciona estimaciones de confianza que ayudan a delimitar qué aspectos de una predicción pueden interpretarse con mayor seguridad. Estas estimaciones no constituyen por sí mismas una validación experimental.</p>
+<p>En esta práctica deben construir un análisis reproducible de dos modelos publicados en <a href="https://alphafold.ebi.ac.uk/">AlphaFold DB</a>. No entrenarán el modelo ni generarán nuevas predicciones. El reto consiste en recuperar y procesar datos estructurales reales y determinar qué conclusiones permiten sostener sus indicadores de confianza y cuáles requieren evidencia adicional.</p>
+<p>Deben trabajar con dos representaciones complementarias: <strong>pLDDT</strong>, un valor de confianza local por residuo, y <strong>PAE</strong>, una matriz de error posicional relativo predicho.</p>
+<h2 id="2-objetivos">2. Objetivos</h2>
+<ul>
+<li>Recuperar modelos y metadatos mediante una API científica y comprender la organización de un archivo estructural PDB.</li>
+<li>Transformar los datos de confianza en estructuras de datos adecuadas para su análisis con Python.</li>
+<li>Diseñar métricas, visualizaciones y un algoritmo de detección de regiones de baja confianza, verificando su comportamiento.</li>
+<li>Procesar una matriz PAE e interpretar conjuntamente confianza local y error posicional relativo.</li>
+<li>Diferenciar una estimación de confianza de una medida de error experimental y documentar un análisis reproducible.</li>
+</ul>
+<h2 id="3-herramientas-y-recursos">3. Herramientas y recursos</h2>
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.uniprot.org/">UniProt</a></td>
+<td>Identificación, secuencia y función de proteínas</td>
+</tr>
+<tr>
+<td><a href="https://alphafold.ebi.ac.uk/">AlphaFold DB</a></td>
+<td>Modelos, visor 3D e indicadores de confianza</td>
+</tr>
+<tr>
+<td><a href="https://alphafold.ebi.ac.uk/api-doc">API de AlphaFold DB</a></td>
+<td>Acceso programático</td>
+</tr>
+<tr>
+<td><a href="https://colab.research.google.com/">Google Colab</a> o <a href="https://jupyter.org/">Jupyter</a></td>
+<td>Notebook de trabajo</td>
+</tr>
+<tr>
+<td><a href="https://requests.readthedocs.io/en/latest/">Requests</a>, <a href="https://biopython.org/docs/latest/Tutorial/chapter_pdb.html">BioPython</a></td>
+<td>Recuperación y procesamiento de archivos</td>
+</tr>
+<tr>
+<td><a href="https://pandas.pydata.org/docs/">Pandas</a>, <a href="https://numpy.org/doc/stable/">NumPy</a>, <a href="https://matplotlib.org/stable/">Matplotlib</a></td>
+<td>Análisis y visualización</td>
+</tr>
+<tr>
+<td><a href="fundamentos-alphafold/">Fundamentos de AlphaFold</a></td>
+<td>Conceptos para comprender la práctica</td>
+</tr>
+<tr>
+<td><a href="recursos-alphafold/">Guía técnica de apoyo</a></td>
+<td>Formatos, indicadores y ejemplos mínimos de código</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-casos-de-estudio">4. Casos de estudio</h2>
+<p>Todos los equipos analizarán la <strong>mioglobina humana (P02144)</strong> como referencia común y elegirán una de las tres proteínas candidatas. La referencia es un caso de comparación, no una verdad experimental ni un control de calidad del modelo.</p>
+<table>
+<thead>
+<tr>
+<th>Proteína</th>
+<th>UniProt</th>
+<th>AlphaFold DB</th>
+<th>Pregunta orientadora</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mioglobina humana (común)</td>
+<td><a href="https://www.uniprot.org/uniprotkb/P02144/entry">P02144</a></td>
+<td><a href="https://alphafold.ebi.ac.uk/entry/P02144">Modelo</a></td>
+<td>¿Cómo se distribuye la confianza en una proteína globular compacta?</td>
+</tr>
+<tr>
+<td>Hemoglobina beta humana</td>
+<td><a href="https://www.uniprot.org/uniprotkb/P68871/entry">P68871</a></td>
+<td><a href="https://alphafold.ebi.ac.uk/entry/P68871">Modelo</a></td>
+<td>¿Presenta un patrón de confianza semejante al de la mioglobina? ¿Qué información falta sobre el complejo funcional?</td>
+</tr>
+<tr>
+<td>Proteína p53 humana</td>
+<td><a href="https://www.uniprot.org/uniprotkb/P04637/entry">P04637</a></td>
+<td><a href="https://alphafold.ebi.ac.uk/entry/P04637">Modelo</a></td>
+<td>¿Existen regiones de confianza diferenciada y cómo se relacionan con las anotaciones biológicas?</td>
+</tr>
+<tr>
+<td>Calmodulina humana 1</td>
+<td><a href="https://www.uniprot.org/uniprotkb/P0DP23/entry">P0DP23</a></td>
+<td><a href="https://alphafold.ebi.ac.uk/entry/P0DP23">Modelo</a></td>
+<td>¿Coinciden la confianza local y la confianza en la disposición relativa de sus regiones?</td>
+</tr>
+</tbody>
+</table>
+<p>Las preguntas son hipótesis de trabajo, no resultados anticipados. No deben interpretar la comparación como una prueba de homología o de similitud estructural.</p>
+<h2 id="5-desarrollo-de-la-practica">5. Desarrollo de la práctica</h2>
+<h3 id="fase-1-exploracion-biologica-y-estructural">Fase 1. Exploración biológica y estructural</h3>
+<p>Consulten las fichas de ambas proteínas en UniProt y AlphaFold DB. Registren identificador, organismo, longitud, función y una característica biológica relevante. Exploren los modelos 3D coloreados por confianza y el mapa PAE disponible en el visor. Localicen regiones que merezcan especial atención y anoten sus posiciones aproximadas.</p>
+<p>Formulen una hipótesis comprobable sobre una diferencia entre los perfiles de confianza de los dos modelos. Indiquen qué indicador usarán para contrastarla.</p>
+<p><strong>Apoyo:</strong> <a href="https://www.ebi.ac.uk/training/online/courses/navigating-alphafold-database/understanding-the-structure-prediction-page/summary-and-model-confidence-tab/">Interpretación de los modelos y sus indicadores</a>.</p>
+<h3 id="fase-2-adquisicion-y-procesamiento-de-datos">Fase 2. Adquisición y procesamiento de datos</h3>
+<p>Deben construir un notebook capaz de consultar la API para cada identificador, seleccionar el modelo correspondiente a la secuencia canónica completa y recuperar los archivos PDB y PAE de ese mismo registro. Guarden el identificador del modelo, versión cuando esté disponible, URLs y fecha de acceso. Comprueben los códigos HTTP y que los datos correspondan a las proteínas elegidas.</p>
+<p>Inspeccionen algunas líneas del PDB antes de procesarlo. Identifiquen átomo, residuo, cadena, coordenadas y campo B. Expliquen por qué en estos modelos dicho campo contiene pLDDT y por qué conviene extraerlo una sola vez por residuo mediante el átomo Cα.</p>
+<p>Construyan una tabla por proteína con posición, nombre del residuo, coordenadas Cα y pLDDT. Verifiquen que las posiciones no se duplican, que el rango de confianza es válido y que la cobertura corresponde a la secuencia esperada. Documenten cualquier discrepancia antes de continuar.</p>
+<p><strong>Apoyo:</strong> <a href="recursos-alphafold/">Acceso a la API y lectura PDB</a> y <a href="https://biopython.org/docs/latest/Tutorial/chapter_pdb.html">documentación Bio.PDB</a>.</p>
+<p>Si falla la API, deben intentar descargar los archivos desde la ficha de AlphaFold DB y procesarlos localmente. Registren el procedimiento alternativo y la procedencia. Si una candidata no dispone de ambos archivos, deben elegir otra y justifíquenlo.</p>
+<h3 id="fase-3-analisis-computacional-de-plddt">Fase 3. Análisis computacional de pLDDT</h3>
+<p>Diseñen un análisis descriptivo para ambas proteínas. Como mínimo, calculen media, mediana y porcentaje de residuos en cada una de las cuatro bandas de confianza. Representen el perfil por posición de residuo, con ejes y umbrales identificables. Utilicen porcentajes para comparar proteínas de distinta longitud.</p>
+<p>Implementen una función que detecte tramos de al menos tres residuos consecutivos con pLDDT inferior a 70. Debe devolver los intervalos de inicio y fin; un salto en la numeración o un valor igual o superior al umbral interrumpe el tramo. Consideren también el tramo al final de la secuencia. Verifiquen con al menos dos pruebas sintéticas: una con intervalos esperados (incluido un tramo final y un salto) y otra sin intervalos válidos. Apliquen la función a ambas proteínas e indiquen el tramo más largo, si existe.</p>
+<p>Contrasten las regiones detectadas con el visor 3D. Respondan las siguientes cuestiones: ¿la media refleja adecuadamente la distribución? ¿Coinciden las observaciones visuales y computacionales? ¿Por qué las posiciones numéricas de proteínas diferentes no son necesariamente posiciones homólogas?</p>
+<p><strong>Apoyo:</strong> <a href="recursos-alphafold/">Guía de pLDDT</a>.</p>
+<h3 id="fase-4-analisis-matricial-de-pae">Fase 4. Análisis matricial de PAE</h3>
+<p>Recuperen del JSON la matriz de error predicho y conviértanla en un array numérico. Comprueben que es cuadrada, que sus valores son finitos y no negativos, y que su dimensión coincide con la longitud del modelo. Si la correspondencia con la secuencia no es clara, deben resolverla antes de interpretar posiciones.</p>
+<p>Generen un mapa de calor por proteína con los mismos límites de color, expresados en ångströms (Å), y ejes de posición de residuo claramente identificados. No deben simetrizar la matriz: el PAE puede depender de la dirección del alineamiento.</p>
+<p>Seleccionen dos regiones no solapadas de una de las proteínas, apoyándose en las anotaciones de UniProt o en un patrón observado en el mapa (en este último caso, deben describirlas como regiones candidatas, no dominios confirmados). Calculen el PAE medio dentro de cada región y entre ambas en las dos direcciones. Utilicen los resultados para razonar si la disposición relativa es más o menos incierta que la estructura interna de las regiones.</p>
+<p>Deben relacionar el resultado con el perfil pLDDT. ¿Es posible encontrar regiones de confianza local alta cuya posición relativa sea incierta? ¿Qué evidencia proporciona su caso? Si no observan ese patrón, deben indicarlo explícitamente.</p>
+<p><strong>Apoyo:</strong> <a href="recursos-alphafold/">Guía de PAE</a>, <a href="https://numpy.org/doc/stable/">NumPy</a> y <a href="https://matplotlib.org/stable/">Matplotlib</a>.</p>
+<h3 id="fase-5-integracion-conclusiones-y-puesta-en-comun">Fase 5. Integración, conclusiones y puesta en común</h3>
+<p>Contrasten la hipótesis inicial con los resultados. Sinteticen en 200–300 palabras las diferencias encontradas, la evidencia cuantitativa que las sustenta y las limitaciones de la interpretación. Incluyan una reflexión sobre la diferencia entre confianza estimada por el modelo y error medido frente a una estructura experimental.</p>
+<h2 id="6-entrega">6. Entrega</h2>
+<p>Deben entregar un único notebook ejecutable con identificación de los modelos y fuentes, hipótesis, código, controles de calidad, tabla de métricas, perfiles pLDDT, detector de tramos y pruebas, mapas PAE, análisis regional y conclusión. Las celdas deben ejecutarse en orden; si se usaron archivos locales, indiquen cómo recuperarlos y adjúntenlos si son necesarios para reproducir la ejecución.</p>
+<h2 id="7-ampliacion-voluntaria">7. Ampliación voluntaria</h2>
+<p>Si disponen de tiempo adicional, estudien la sensibilidad del detector a distintos umbrales o busquen una estructura experimental en <a href="https://www.rcsb.org/">RCSB PDB</a>. Planteen cómo comparar coordenadas de residuos equivalentes tras una superposición estructural, considerando cobertura, condiciones experimentales y estado oligomérico. Esta ampliación no forma parte de las tareas obligatorias redactadas en las secciones  anteriores.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
